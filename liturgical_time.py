@@ -3,7 +3,7 @@ All liturgical calendar magic is performed here
 Thank the Lord for the Easter dateutil
 '''
 
-from datetime import datetime, date, timedelta
+from datetime import datetime, date, time, timedelta
 from dateutil.easter import easter
 
 class LectionaryDateTime():
@@ -17,6 +17,7 @@ class LectionaryDateTime():
         '''
         self.now = now
         self.cycle = self.get_cycle()
+        self.office = self.get_office()
 
     def first_sunday_advent(self):
         '''
@@ -55,6 +56,33 @@ class LectionaryDateTime():
 
         return cycle
 
+    def get_office(self):
+        '''
+        returns the appropriate office based on time
+        '''
+        office = None
+
+        prime_diff = abs((self.now - datetime.combine(self.now.date(), time(6, 0))).total_seconds())
+        sext_diff = abs((self.now - datetime.combine(self.now.date(), time(12, 0))).total_seconds())
+        vespers_diff = abs((self.now - datetime.combine(self.now.date(), time(18, 0))).total_seconds())
+        compline_diff = abs((self.now - datetime.combine(self.now.date(), time(21, 0))).total_seconds())
+
+        diff_list = [prime_diff, sext_diff, vespers_diff, compline_diff]
+        office_enum = diff_list.index(min(diff_list))
+
+        if office_enum == 0:
+            office = 'PRIME'
+        elif office_enum == 1:
+            office = 'SEXT'
+        elif office_enum == 2:
+            office = 'VESPERS'
+        else:
+            office = 'COMPLINE'
+
+        return office
+
 if __name__ == '__main__':
-    test = LectionaryDateTime(now=datetime.now())
+    test = LectionaryDateTime()
+    print(str(test.now))
     print(str(test.cycle))
+    print(str(test.office))
