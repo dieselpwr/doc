@@ -1,12 +1,12 @@
 '''
-All liturgical calendar magic is performed here
-Thank the Lord for the Easter dateutil
+all liturgical calendar magic is performed here
+thank the Lord for the Easter dateutil
 '''
 
 from datetime import datetime, date, time, timedelta
 from dateutil.easter import easter
 
-class LectionaryDateTime():
+class LiturgicalTime():
     '''
     stores all properties of the current datetime
     '''
@@ -18,19 +18,59 @@ class LectionaryDateTime():
         self.now = now
         self.cycle = self.get_cycle()
         self.office = self.get_office()
+        self.season = self.get_season()
 
-    def first_sunday_advent(self):
+    def epiphany(self, year):
+        '''
+        returns epiphany for a given year
+        '''
+        return date(year, 1, 6)
+
+    def ash_wednesday(self, year):
+        '''
+        returns ash wednesday for a given year
+        '''
+        d = timedelta(days=-46)
+        return easter(year)+d
+
+    def easter_day(self, year):
+        '''
+        returns easter day for a given year
+        '''
+        return easter(year)
+
+    def ascension_day(self, year):
+        '''
+        returns ascension day for a given year
+        '''
+        d = timedelta(days=39)
+        return easter(year) + d
+
+    def pentecost(self, year):
+        '''
+        returns the day of pentecost for a given year
+        '''
+        d = timedelta(weeks=7)
+        return easter(year) + d
+
+    def advent_sunday(self, year):
         '''
         returns the first sunday of advent for a given year
         '''
         weeks = 4
         correction = 0
-        christmas = date(self.now.year, 12, 25)
+        christmas = self.christmas_day(year)
         if (christmas.weekday() != 6):
             weeks-= 1
             correction = (christmas.isoweekday())
         d = timedelta(days=(-1 * ((weeks * 7) + correction)))
         return christmas + d
+
+    def christmas_day(self, year):
+        '''
+        returns Christmas day for a given year
+        '''
+        return date(year, 12, 25)
 
     def get_cycle(self):
         '''
@@ -44,12 +84,12 @@ class LectionaryDateTime():
             even_year = False
         
         if even_year:
-            if self.now.date() > self.first_sunday_advent():
+            if self.now.date() > self.advent_sunday(self.now.year):
                 cycle = 1
             else:
                 cycle = 2
         else:
-            if self.now.date() < self.first_sunday_advent():
+            if self.now.date() < self.advent_sunday(self.now.year):
                 cycle = 1
             else:
                 cycle = 2
@@ -81,8 +121,15 @@ class LectionaryDateTime():
 
         return office
 
+    def get_season(self):
+        '''
+        returns the liturgical season
+        '''
+        season = None
+        return season
+
 if __name__ == '__main__':
-    test = LectionaryDateTime()
+    test = LiturgicalTime()
     print(str(test.now))
     print(str(test.cycle))
     print(str(test.office))
