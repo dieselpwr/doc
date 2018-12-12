@@ -1,10 +1,8 @@
 '''
 all liturgical calendar magic is performed here
-thank the Lord for the Easter dateutil
 '''
 
 from datetime import datetime, date, time, timedelta
-from dateutil.easter import easter
 
 class LiturgicalTime():
     '''
@@ -20,6 +18,25 @@ class LiturgicalTime():
         self.office = self.get_office()
         self.season = self.get_season()
 
+    def easter_day(self, year):
+        '''
+        returns easter day for a given year
+        thank the Lord for the easter dateutil
+        removed the non-western methods for minimal performance diff
+        removed the comments since it is greek to me anyways
+        '''
+        y = year
+        g = y % 19
+        e = 0
+        c = y//100
+        h = (c - c//4 - (8*c + 13)//25 + 19*g + 15) % 30
+        i = h - (h//28)*(1 - (h//28)*(29//(h + 1))*((21 - g)//11))
+        j = (y + y//4 + i + 2 - c + c//4) % 7
+        p = i - j + e
+        d = 1 + (p + 27 + (p + 6)//40) % 31
+        m = 3 + (p + 26)//30
+        return date(int(y), int(m), int(d))
+
     def epiphany(self, year):
         '''
         returns epiphany for a given year
@@ -31,27 +48,21 @@ class LiturgicalTime():
         returns ash wednesday for a given year
         '''
         d = timedelta(days=-46)
-        return easter(year)+d
-
-    def easter_day(self, year):
-        '''
-        returns easter day for a given year
-        '''
-        return easter(year)
+        return self.easter_day(year)+d
 
     def ascension_day(self, year):
         '''
         returns ascension day for a given year
         '''
         d = timedelta(days=39)
-        return easter(year) + d
+        return self.easter_day(year) + d
 
     def pentecost(self, year):
         '''
         returns the day of pentecost for a given year
         '''
         d = timedelta(weeks=7)
-        return easter(year) + d
+        return self.easter_day(year) + d
 
     def advent_sunday(self, year):
         '''
