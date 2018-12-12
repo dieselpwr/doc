@@ -1,0 +1,5 @@
+__title__ = 'Daily Office Companion (DOC)'
+__description__ = 'Provides a dynamic guide to praying the Daily Office'
+__url__ = 'https://github.com/dieselpwr/doc'
+__version__ = '0.0.1'
+__author__ = 'dieselpwr'
