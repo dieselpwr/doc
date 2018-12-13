@@ -9,9 +9,9 @@ class CanonicalHours(Enum):
     '''
     enumeration of canonical hours
     '''
-    PRIME = 1
-    SEXT = 2
-    VESPERS = 3
+    MORNING = 1
+    NOONDAY = 2
+    EVENING = 3
     COMPLINE = 4
 
 class LiturgicalDay:
@@ -149,11 +149,11 @@ class DailyOffice:
         '''
         returns the appropriate cannonical hour based on time
         '''
-        prime_diff = abs((self.now - datetime.combine(self.now.date(), time(6, 0))).total_seconds())
-        sext_diff = abs((self.now - datetime.combine(self.now.date(), time(12, 0))).total_seconds())
-        vespers_diff = abs((self.now - datetime.combine(self.now.date(), time(18, 0))).total_seconds())
-        compline_diff = abs((self.now - datetime.combine(self.now.date(), time(21, 0))).total_seconds())
-        diffs = (prime_diff, sext_diff, vespers_diff, compline_diff)
+        morning = abs((self.now - datetime.combine(self.now.date(), time(6, 0))).total_seconds())
+        noonday = abs((self.now - datetime.combine(self.now.date(), time(12, 0))).total_seconds())
+        evening = abs((self.now - datetime.combine(self.now.date(), time(18, 0))).total_seconds())
+        compline = abs((self.now - datetime.combine(self.now.date(), time(21, 0))).total_seconds())
+        diffs = (morning, noonday, evening, compline)
         hours_enum = diffs.index(min(diffs))
         return CanonicalHours(hours_enum)
 
