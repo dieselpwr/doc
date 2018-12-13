@@ -5,14 +5,36 @@ all liturgical calendar magic is performed here
 from datetime import datetime, date, time, timedelta
 from enum import Enum
 
-class CanonicalHours(Enum):
+
+class CanonicalHour(Enum):
     '''
     enumeration of canonical hours
     '''
-    MORNING = 1
-    NOONDAY = 2
-    EVENING = 3
-    COMPLINE = 4
+    MORNING = 0
+    NOONDAY = 1
+    EVENING = 2
+    COMPLINE = 3
+
+
+class CycleYear(Enum):
+    '''
+    enumeration of daily office cycle years
+    '''
+    YEAR_ONE = 1
+    YEAR_TWO = 2
+
+
+class LiturgicalSeason(Enum):
+    '''
+    enumeration of liturgical seasons
+    '''
+    ADVENT = 0
+    CHRISTMAS = 1
+    EPIPHANY = 2
+    LENT = 3
+    EASTER = 4
+    AFTER_PENTECOST = 5
+
 
 class LiturgicalDay:
     '''
@@ -94,6 +116,7 @@ class LiturgicalDay:
         d = timedelta(days=(-1 * ((weeks * 7) + correction)))
         return christmas + d
 
+
 class LiturgicalSpan:
     '''
     functions returning boolean based on whether the given datetime is
@@ -106,7 +129,6 @@ class LiturgicalSpan:
         '''
         self.now = now
         self.lday = LiturgicalDay(year=now.year)
-
 
 
 class DailyOffice:
@@ -132,18 +154,18 @@ class DailyOffice:
             even_year = True
         else:
             even_year = False
-        cycle = None
+        cycle_enum = None
         if even_year:
             if self.now.date() > self.lday.advent_sunday():
-                cycle = 1
+                cycle_enum = 1
             else:
-                cycle = 2
+                cycle_enum = 2
         else:
             if self.now.date() < self.lday.advent_sunday():
-                cycle = 1
+                cycle_enum = 1
             else:
-                cycle = 2
-        return cycle
+                cycle_enum = 2
+        return CycleYear(cycle_enum)
 
     def get_hour(self):
         '''
@@ -155,10 +177,11 @@ class DailyOffice:
         compline = abs((self.now - datetime.combine(self.now.date(), time(21, 0))).total_seconds())
         diffs = (morning, noonday, evening, compline)
         hours_enum = diffs.index(min(diffs))
-        return CanonicalHours(hours_enum)
+        return CanonicalHour(hours_enum)
 
 if __name__ == '__main__':
-    test = DailyOffice()
+    d = timedelta(hours=-8)
+    test = DailyOffice(now=datetime.now() + d)
     print(str(test.now))
-    print(str(test.cycle))
+    print(str(test.cycle.value))
     print(str(test.hour.name))
