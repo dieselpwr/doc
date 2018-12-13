@@ -5,7 +5,6 @@ all liturgical calendar magic is performed here
 from datetime import datetime, date, time, timedelta
 from enum import Enum
 
-
 class CanonicalHour(Enum):
     '''
     enumeration of canonical hours
@@ -55,8 +54,86 @@ class LiturgicalDay:
         returns epiphany for a given year
         '''
         return date(self.year, 1, 6)
+    
+    def confession_st_peter(self):
+        '''
+        returns confession of St. Peter for a given year
+        '''
+        return date(self.year, 1, 18)
+    
+    def confession_st_paul(self):
+        '''
+        returns confession of St. Paul for a given year
+        '''
+        return date(self.year, 1, 25)
+    
+    def presentation_eve(self):
+        '''
+        returns the eve of the presentation for a given year
+        '''
+        return date(self.year, 2, 1)
+    
+    def presentation(self):
+        '''
+        returns the presentation for a given year
+        '''
+        return date(self.year, 2, 2)
+    
+    def st_matthias(self):
+        '''
+        returns St. Matthias' day for a given year
+        '''
+        return date(self.year, 2, 24)
+    
+    def st_joseph(self):
+        '''
+        returns St. Joseph's day for a given year
+        '''
+        return date(self.year, 3, 19)
+    
+    def annunciation_eve(self):
+        '''
+        returns the eve of the annunciation for a given year
+        '''
+        return date(self.year, 3, 24)
+    
+    def annunciation(self):
+        '''
+        returns the annunciation for a given year
+        '''
+        return date(self.year, 3, 25)
 
-    #==========================Easter Dependent============================
+    def st_mark(self):
+        '''
+        returns St. Mark's day for a given year
+        '''
+        return date(self.year, 4, 25)
+    
+    def ss_phillip_james(self):
+        '''
+        returns St. Phillip's and St. James' Day for a given year
+        '''
+        return date(self.year, 5, 1)
+    
+    def visitation_eve(self):
+        '''
+        returns the eve of the visitation for a given year
+        '''
+        return date(self.year, 5, 30)
+
+    def visitation(self):
+        '''
+        returns the visitation for a given year
+        '''
+        return date(self.year, 5, 31)
+
+    def christmas(self):
+        '''
+        returns Christmas for a given year
+        '''
+        return date(self.year, 12, 25)
+
+    #======================Calculated Date=============================
 
     def easter(self):
         '''
@@ -73,6 +150,23 @@ class LiturgicalDay:
         d = 1 + (p + 27 + (p + 6)//40) % 31
         m = 3 + (p + 26)//30
         return date(int(y), int(m), int(d))
+    
+    def thanksgiving(self):
+        '''
+        returns thanksgiving for a given year
+        '''
+        y = self.year
+        s = date(y, 11, 1)
+        e = date(y, 11, 30)
+        d = timedelta(days=1)
+        t = 0
+        while s <= e and t < 3:
+            if(s.weekday() == 3):
+                t += 1
+            s += d
+        return s
+
+    #==========================Easter Dependent============================
 
     def ash_wednesday(self):
         '''
@@ -96,12 +190,6 @@ class LiturgicalDay:
         return self.easter() + d
 
     #========================Christmas Dependent===========================
-
-    def christmas(self):
-        '''
-        returns Christmas for a given year
-        '''
-        return date(self.year, 12, 25)
 
     def advent_sunday(self):
         '''
@@ -145,6 +233,7 @@ class DailyOffice:
         self.lspan = LiturgicalSpan(now=now)
         self.cycle = self.get_cycle()
         self.hour = self.get_hour()
+        # self.season = self.get_season()
 
     def get_cycle(self):
         '''
@@ -180,7 +269,7 @@ class DailyOffice:
         return CanonicalHour(hours_enum)
 
 if __name__ == '__main__':
-    d = timedelta(hours=-8)
+    d = timedelta(hours=0)
     test = DailyOffice(now=datetime.now() + d)
     print(str(test.now))
     print(str(test.cycle.value))
