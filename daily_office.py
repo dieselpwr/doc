@@ -3,7 +3,6 @@ Daily Office Companion
 '''
 
 from enum import Enum
-from dataclasses import dataclass
 from dateutil.easter import easter
 from dateutil.parser import parse
 from dateutil.relativedelta import relativedelta as rd
@@ -47,23 +46,6 @@ class LiturgicalRite(Enum):
     RITE_ONE = 1
     RITE_TWO = 2
 
-
-@dataclass
-class HolyDay:
-    '''
-    data class for holding holy day attributes
-    '''
-    name: str
-    rank: int
-    date: date
-    collect_traditional: str
-    collect_contemporary: str
-    psalm_morning: str
-    psalm_evening: str
-    reading_morning_y1: str
-    reading_morning_y2: str
-    reading_evening_y1: str
-    reading_evening_y2: str
 
 class LiturgicalDay(dict):
     '''
