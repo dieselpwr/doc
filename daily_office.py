@@ -28,18 +28,6 @@ class CycleYear(Enum):
     YEAR_TWO = 2
 
 
-class LiturgicalSeason(Enum):
-    '''
-    enumeration of liturgical seasons
-    '''
-    ADVENT = 0
-    CHRISTMAS = 1
-    EPIPHANY = 2
-    LENT = 3
-    EASTER = 4
-    AFTER_PENTECOST = 5
-
-
 class LiturgicalRite(Enum):
     '''
     enumeration or liturgical rites
@@ -113,6 +101,10 @@ class LiturgicalDay(dict):
         '''
         populates with liturgical days
         '''
+
+        #============================Tier 6============================
+
+
 
         #============================Tier 5============================
 
@@ -642,7 +634,7 @@ class LiturgicalDay(dict):
         #============================Tier 3============================
 
         # The First Sunday of Advent
-        date_key = date(year, 12, 25) - rd(weekday=SU(-4))
+        date_key = date(year, 12, 25) - rd(days=1, weekday=SU(-4))
         name_key = 'FIRST_SUNDAY_OF_ADVENT'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
@@ -702,7 +694,7 @@ class LiturgicalDay(dict):
         name_key = 'THE_TRANSFIGURATION'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'The Transfiguration ',
+            'name': 'The Transfiguration',
             'long_name': 'The Transfiguration of Our Lord Jesus Christ',
             'date': date_key,
             'collect_traditional': 'page 191 under "The Transfiguration "',
@@ -841,6 +833,24 @@ class LiturgicalDay(dict):
             'reading_evening_y2': 'Wisdom 5:1-5,14-16      Revelation 21:1-4,22--22:5',
         }
 
+        # Christmas Eve
+        date_key = date(year, 12, 24)
+        name_key = 'CHRISTMAS_EVE'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Christmas Eve',
+            'long_name': 'Christmas Eve',
+            'date': date_key,
+            'collect_traditional': 'page 160 under "Fourth Sunday of Advent"',
+            'collect_contemporary': 'page 212 under "Fourth Sunday of Advent"',
+            'psalm_morning': 'Psalm 45, 46',
+            'psalm_evening': 'Psalm 89:1-29',
+            'reading_morning_y1': 'Isa. 35:1-10      Rev. 22:12-17, 21      Luke 1:67-80',
+            'reading_morning_y2': 'Baruch 4:36--5:9      Mat. 1:18-25',
+            'reading_evening_y1': 'Baruch 4:36--5:9      Gal. 3:23--4:7      Mat. 1:18-25',
+            'reading_evening_y2': 'Isa. 59:15b-21      Phil. 2:5-11',
+        }
+
         # The Nativity of Our Lord Jesus Christ
         date_key = date(year, 12, 25)
         name_key = 'CHRISTMAS_DAY'
@@ -887,6 +897,37 @@ class LiturgicalDay(dict):
             'reading_evening_y2': 'Matt. 12-14-21',
         }
 
+        # Eve of Holy Name
+        date_key = date(year, 12, 31)
+        name_key = 'EVE_OF_THE_HOLY_NAME'
+        switch_key = self.key_switcher(date_key, name_key)
+        collect_traditional_val = 'page 161 under "First Sunday after Christmas Day"'
+        collect_contemporary_val = 'page 213 under "First Sunday after Christmas Day"'
+        if (date(year, 12, 25) + rd(days=1, weekday=SU(+1))) > date_key:
+            collect_traditional_val = choice([
+                'page 160 under "The Nativity of Our Lord: Christmas Day" first selection',
+                'page 161 under "The Nativity of Our Lord: Christmas Day" second selection',
+                'page 161 under "The Nativity of Our Lord: Christmas Day" third selection'
+            ])
+            collect_contemporary_val = choice([
+                'page 212 under "The Nativity of Our Lord: Christmas Day" first selection',
+                'page 212 under "The Nativity of Our Lord: Christmas Day" second selection',
+                'page 213 under "The Nativity of Our Lord: Christmas Day" third selection'
+            ])
+        self[switch_key] = {
+            'name': 'Eve of Holy Name',
+            'long_name': 'Eve of Holy Name',
+            'date': date_key,
+            'collect_traditional': collect_traditional_val,
+            'collect_contemporary': collect_contemporary_val,
+            'psalm_morning': 'Psalm 46, 48',
+            'psalm_evening': 'Psalm 90',
+            'reading_morning_y1': 'Isa. 26:1-9      2 Cor. 5:16--6:2      John 8:12-19',
+            'reading_morning_y2': 'Isa. 49:1-7      Rev. 21:22-27',
+            'reading_evening_y1': '1 kings 3:5-14      James 4:13-17; 5:7-11      John 5:1-15',
+            'reading_evening_y2': 'Isa. 65:15b-25      Rev. 21:1-6',
+        }
+
 
 class LiturgicalSpan:
     '''
@@ -899,6 +940,7 @@ class LiturgicalSpan:
         initializes the class
         '''
         self.now = now
+        self.lday = LiturgicalDay(year=now.year, switch=True)
 
 
 class DailyOffice:
@@ -915,7 +957,6 @@ class DailyOffice:
         self.lspan = LiturgicalSpan(now=now)
         self.cycle = self.get_cycle()
         self.hour = self.get_hour()
-        # self.season = self.get_season()
 
     def get_cycle(self):
         '''
@@ -949,6 +990,7 @@ class DailyOffice:
         diffs = (morning, noonday, evening, compline)
         hours_enum = diffs.index(min(diffs))
         return CanonicalHour(hours_enum)
+
 
 if __name__ == '__main__':
     d = rd(hours=0)
