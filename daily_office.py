@@ -709,6 +709,47 @@ class LiturgicalDay(dict):
 
         #============================Tier 1============================
 
+        # Eve of Epiphany
+        date_key = date(year, 1, 5)
+        name_key = 'EVE_OF_EPIPHANY'
+        switch_key = self.key_switcher(date_key, name_key)
+        collect_traditional_val = 'page 161 under "First Sunday after Christmas Day"'
+        collect_contemporary_val = 'page 213 under "First Sunday after Christmas Day"'
+        if date_key > (date(year, 12, 25) + rd(days=1, weekday=SU(+2))):
+            collect_traditional_val = 'page 162 under "Second Sunday after Christmas Day"'
+            collect_contemporary_val = 'page 214 under "Second Sunday after Christmas Day"'
+        self[switch_key] = {
+            'name': 'Eve of Epiphany',
+            'long_name': 'Eve of Epiphany',
+            'date': date_key,
+            'collect_traditional': collect_traditional_val,
+            'collect_contemporary': collect_contemporary_val,
+            'psalm_morning': 'Psalm 2, 110:1-5(6-7)',
+            'psalm_evening': 'Psalm 29, 98',
+            'reading_morning_y1': 'Jonah 2:2-9      Eph. 6:10-20      John 11:17-27, 38-44',
+            'reading_morning_y2': 'Joshua 1:1-9      Heb. 11:32--12:2      John 15:1-16',
+            'reading_evening_y1': 'Isa. 66:18-23      Rom. 15:7-13',
+            'reading_evening_y2': 'Isa. 66:18-23      Rom. 15:7-13',
+        }
+
+        # The Epiphany of Our Lord Jesus Christ
+        date_key = date(year, 1, 6)
+        name_key = 'THE_EPIPHANY'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'The Epiphany',
+            'long_name': 'The Epiphany of Our Lord Jesus Christ',
+            'date': date_key,
+            'collect_traditional': 'page 162 under "The Epiphany"',
+            'collect_contemporary': 'page 214 under "The Epiphany"',
+            'psalm_morning': 'Psalm 46, 97',
+            'psalm_evening': 'Psalm 96, 100',
+            'reading_morning_y1': 'Isa. 52:7-10      Rev. 21:22-27',
+            'reading_morning_y2': 'Isa. 49:1-7      Rev. 21:22-27',
+            'reading_evening_y1': 'Matt. 12:14-21',
+            'reading_evening_y2': 'Matt. 12-14-21',
+        }
+
         # The Sunday of the Resurrection, or Easter Day
         date_key = easter(year)
         name_key = 'EASTER_DAY'
@@ -879,31 +920,13 @@ class LiturgicalDay(dict):
             'reading_evening_y2': 'John 3:31-36',
         }
 
-        # The Epiphany of Our Lord Jesus Christ
-        date_key = date(year, 1, 6)
-        name_key = 'THE_EPIPHANY'
-        switch_key = self.key_switcher(date_key, name_key)
-        self[switch_key] = {
-            'name': 'The Epiphany',
-            'long_name': 'The Epiphany of Our Lord Jesus Christ',
-            'date': date_key,
-            'collect_traditional': 'page 162 under "The Epiphany"',
-            'collect_contemporary': 'page 214 under "The Epiphany"',
-            'psalm_morning': 'Psalm 46, 97',
-            'psalm_evening': 'Psalm 96, 100',
-            'reading_morning_y1': 'Isa. 52:7-10      Rev. 21:22-27',
-            'reading_morning_y2': 'Isa. 49:1-7      Rev. 21:22-27',
-            'reading_evening_y1': 'Matt. 12:14-21',
-            'reading_evening_y2': 'Matt. 12-14-21',
-        }
-
         # Eve of Holy Name
         date_key = date(year, 12, 31)
         name_key = 'EVE_OF_THE_HOLY_NAME'
         switch_key = self.key_switcher(date_key, name_key)
         collect_traditional_val = 'page 161 under "First Sunday after Christmas Day"'
         collect_contemporary_val = 'page 213 under "First Sunday after Christmas Day"'
-        if (date(year, 12, 25) + rd(days=1, weekday=SU(+1))) > date_key:
+        if date_key < (date(year, 12, 25) + rd(days=1, weekday=SU(+1))):
             collect_traditional_val = choice([
                 'page 160 under "The Nativity of Our Lord: Christmas Day" first selection',
                 'page 161 under "The Nativity of Our Lord: Christmas Day" second selection',
