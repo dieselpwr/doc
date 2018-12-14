@@ -113,8 +113,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'The Confession of Saint Peter the Apostle',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -131,8 +130,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'The Conversion of Saint Paul the Apostle',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -149,8 +147,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'Saint Matthias the Apostle',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -167,8 +164,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'Saint Joseph',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -185,8 +181,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'The Annunciation of Our Lord Jesus Christ to the Blessed Virgin Mary',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -203,8 +198,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'Saint Mark the Evangelist',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -221,8 +215,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'Saint Philip and Saint James, Apostles',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -239,8 +232,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'The Visitation of the Blessed Virgin Mary',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -257,8 +249,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'Saint Barnabas the Apostle',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -275,8 +266,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'The Nativity of Saint John the Baptist',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -293,8 +283,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'Saint Peter and Saint Paul, Apostles',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -311,8 +300,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'Independence Day',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -329,8 +317,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'Saint Mary Magdalene',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -346,8 +333,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'Saint James the Apostle',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -364,8 +350,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'Saint Mary the Virgin, Mother of Our Lord Jesus Christ',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -382,8 +367,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'Saint Bartholomew the Apostle',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -400,8 +384,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'Holy Cross Day',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -418,8 +401,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'Saint Matthew, Apostle and Evangelist',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -436,8 +418,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'Saint Michael and All Angels',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -454,8 +435,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'Saint Luke the Evangelist',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -472,8 +452,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'Saint James of Jerusalem, Brother of Our Lord Jesus Christ, and Martyr',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -490,8 +469,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'Saint Simon and Saint Jude, Apostles',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -508,8 +486,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'Thanksgiving Day',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -526,8 +503,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'Saint Andrew the Apostle',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -544,8 +520,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'Saint Thomas the Apostle',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -562,8 +537,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'Saint Stephen, Deacon and Martyr',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -580,8 +554,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'Saint John, Apostle and Evangelist',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -598,8 +571,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'The Holy Innocents',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -618,8 +590,7 @@ class LiturgicalDay(dict):
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': '',
-            'long_name': '',
+            'name': 'Ash Wednesday',
             'date': date_key,
             'collect_traditional': 'page  under ""',
             'collect_contemporary': 'page  under ""',
@@ -638,8 +609,7 @@ class LiturgicalDay(dict):
         name_key = 'PALM_SUNDAY'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Palm Sunday',
-            'long_name': 'The Sunday of the Passion: Palm Sunday',
+            'name': 'The Sunday of the Passion: Palm Sunday',
             'date': date_key,
             'collect_traditional': 'page 168 under "Sunday of the Passion: Palm Sunday"',
             'collect_contemporary': 'page 219 under "Sunday of the Passion: Palm Sunday"',
@@ -656,8 +626,7 @@ class LiturgicalDay(dict):
         name_key = 'FIRST_SUNDAY_OF_ADVENT'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'First Sunday of Advent',
-            'long_name': 'The First Sunday of Advent',
+            'name': 'The First Sunday of Advent',
             'date': date_key,
             'collect_traditional': 'page 159 under "First Sunday of Advent"',
             'collect_contemporary': 'page 211 under "First Sunday of Advent"',
@@ -676,8 +645,7 @@ class LiturgicalDay(dict):
         name_key = 'THE_HOLY_NAME'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'The Holy Name',
-            'long_name': 'The Holy Name of Our Lord Jesus Christ',
+            'name': 'The Holy Name of Our Lord Jesus Christ',
             'date': date_key,
             'collect_traditional': 'page 162 under "The Holy Name"',
             'collect_contemporary': 'page 213 under "The Holy Name"',
@@ -694,8 +662,7 @@ class LiturgicalDay(dict):
         name_key = 'THE_PRESENTATION'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'The Presentation',
-            'long_name': 'The Presentation of Our Lord Jesus Christ in the Temple',
+            'name': 'The Presentation of Our Lord Jesus Christ in the Temple',
             'date': date_key,
             'collect_traditional': 'page 187 under "The Presentation"',
             'collect_contemporary': 'page 239 under "The Presentation"',
@@ -712,8 +679,7 @@ class LiturgicalDay(dict):
         name_key = 'THE_TRANSFIGURATION'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'The Transfiguration',
-            'long_name': 'The Transfiguration of Our Lord Jesus Christ',
+            'name': 'The Transfiguration of Our Lord Jesus Christ',
             'date': date_key,
             'collect_traditional': 'page 191 under "The Transfiguration "',
             'collect_contemporary': 'page 243 under "The Transfiguration "',
@@ -738,7 +704,6 @@ class LiturgicalDay(dict):
             collect_contemporary_val = 'page 214 under "Second Sunday after Christmas Day"'
         self[switch_key] = {
             'name': 'Eve of Epiphany',
-            'long_name': 'Eve of Epiphany',
             'date': date_key,
             'collect_traditional': collect_traditional_val,
             'collect_contemporary': collect_contemporary_val,
@@ -755,8 +720,7 @@ class LiturgicalDay(dict):
         name_key = 'THE_EPIPHANY'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'The Epiphany',
-            'long_name': 'The Epiphany of Our Lord Jesus Christ',
+            'name': 'The Epiphany of Our Lord Jesus Christ',
             'date': date_key,
             'collect_traditional': 'page 162 under "The Epiphany"',
             'collect_contemporary': 'page 214 under "The Epiphany"',
@@ -791,8 +755,7 @@ class LiturgicalDay(dict):
             'Isa. 51:9-11      John 20:19-23',
         ])
         self[switch_key] = {
-            'name': 'Easter Day',
-            'long_name': 'The Sunday of the Resurrection, or Easter Day',
+            'name': 'The Sunday of the Resurrection, or Easter Day',
             'date': date_key,
             'collect_traditional': collect_traditional_val,
             'collect_contemporary': collect_contemporary_val,
@@ -818,7 +781,6 @@ class LiturgicalDay(dict):
         ])
         self[switch_key] = {
             'name': 'Ascension Day',
-            'long_name': 'Ascension Day',
             'date': date_key,
             'collect_traditional': collect_traditional_val,
             'collect_contemporary': collect_contemporary_val,
@@ -843,8 +805,7 @@ class LiturgicalDay(dict):
             'page 227 under "The Day of Pentecost: Whitsunday" second selection'
         ])
         self[switch_key] = {
-            'name': 'Whitsunday',
-            'long_name': 'The Day of Pentecost: Whitsunday',
+            'name': 'The Day of Pentecost: Whitsunday',
             'date': date_key,
             'collect_traditional': collect_traditional_val,
             'collect_contemporary': collect_contemporary_val,
@@ -861,8 +822,7 @@ class LiturgicalDay(dict):
         name_key = 'TRINITY_SUNDAY'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Trinity Sunday',
-            'long_name': 'The First Sunday after Pentecost: Trinity Sunday',
+            'name': 'The First Sunday after Pentecost: Trinity Sunday',
             'date': date_key,
             'collect_traditional': 'page 176 under "The First Sunday after Pentecost: Trinity Sunday"',
             'collect_contemporary': 'page 228 under "The First Sunday after Pentecost: Trinity Sunday"',
@@ -880,7 +840,6 @@ class LiturgicalDay(dict):
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'All Saints Day',
-            'long_name': 'All Saints Day',
             'date': date_key,
             'collect_traditional': 'page 194 under "All Saints Day"',
             'collect_contemporary': 'page 245 under "All Saints Day"',
@@ -898,7 +857,6 @@ class LiturgicalDay(dict):
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'Christmas Eve',
-            'long_name': 'Christmas Eve',
             'date': date_key,
             'collect_traditional': 'page 160 under "Fourth Sunday of Advent"',
             'collect_contemporary': 'page 212 under "Fourth Sunday of Advent"',
@@ -925,8 +883,7 @@ class LiturgicalDay(dict):
             'page 213 under "The Nativity of Our Lord: Christmas Day" third selection'
         ])
         self[switch_key] = {
-            'name': 'Christmas Day',
-            'long_name': 'The Nativity of Our Lord Jesus Christ',
+            'name': 'The Nativity of Our Lord Jesus Christ',
             'date': date_key,
             'collect_traditional': collect_traditional_val,
             'collect_contemporary': collect_contemporary_val,
@@ -957,7 +914,6 @@ class LiturgicalDay(dict):
             ])
         self[switch_key] = {
             'name': 'Eve of Holy Name',
-            'long_name': 'Eve of Holy Name',
             'date': date_key,
             'collect_traditional': collect_traditional_val,
             'collect_contemporary': collect_contemporary_val,
