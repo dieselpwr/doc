@@ -113,7 +113,7 @@ class LiturgicalDay(dict):
         populates with liturgical days
         '''
 
-        #===========================Unsorted===========================
+        #============================Tier 5============================
 
         # The Confession of Saint Peter the Apostle
         date_key = date(year, 1, 18)
@@ -187,6 +187,24 @@ class LiturgicalDay(dict):
             'reading_evening_y2': '',
         }
 
+        # The Annunciation of Our Lord Jesus Christ to the Blessed Virgin Mary
+        date_key = date(year, 3, 25)
+        name_key = ''
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': '',
+            'long_name': '',
+            'date': date_key,
+            'collect_traditional': 'page  under ""',
+            'collect_contemporary': 'page  under ""',
+            'psalm_morning': 'Psalm ',
+            'psalm_evening': 'Psalm ',
+            'reading_morning_y1': '',
+            'reading_morning_y2': '',
+            'reading_evening_y1': '',
+            'reading_evening_y2': '',
+        }
+
         # Saint Mark the Evangelist
         date_key = date(year, 4, 25)
         name_key = ''
@@ -223,8 +241,44 @@ class LiturgicalDay(dict):
             'reading_evening_y2': '',
         }
 
+        # The Visitation of the Blessed Virgin Mary
+        date_key = date(year, 5, 31)
+        name_key = ''
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': '',
+            'long_name': '',
+            'date': date_key,
+            'collect_traditional': 'page  under ""',
+            'collect_contemporary': 'page  under ""',
+            'psalm_morning': 'Psalm ',
+            'psalm_evening': 'Psalm ',
+            'reading_morning_y1': '',
+            'reading_morning_y2': '',
+            'reading_evening_y1': '',
+            'reading_evening_y2': '',
+        }
+
         # Saint Barnabas the Apostle
         date_key = date(year, 6, 11)
+        name_key = ''
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': '',
+            'long_name': '',
+            'date': date_key,
+            'collect_traditional': 'page  under ""',
+            'collect_contemporary': 'page  under ""',
+            'psalm_morning': 'Psalm ',
+            'psalm_evening': 'Psalm ',
+            'reading_morning_y1': '',
+            'reading_morning_y2': '',
+            'reading_evening_y1': '',
+            'reading_evening_y2': '',
+        }
+
+        # The Nativity of Saint John the Baptist
+        date_key = date(year, 6, 24)
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
@@ -348,6 +402,24 @@ class LiturgicalDay(dict):
             'reading_evening_y2': '',
         }
 
+        # Holy Cross Day
+        date_key = date(year, 9, 14)
+        name_key = ''
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': '',
+            'long_name': '',
+            'date': date_key,
+            'collect_traditional': 'page  under ""',
+            'collect_contemporary': 'page  under ""',
+            'psalm_morning': 'Psalm ',
+            'psalm_evening': 'Psalm ',
+            'reading_morning_y1': '',
+            'reading_morning_y2': '',
+            'reading_evening_y1': '',
+            'reading_evening_y2': '',
+        }
+
         # Saint Matthew, Apostle and Evangelist
         date_key = date(year, 9, 21)
         name_key = ''
@@ -438,6 +510,24 @@ class LiturgicalDay(dict):
             'reading_evening_y2': '',
         }
 
+        # Thanksgiving Day
+        date_key = date(year, 11, 1) + rd(weekday=TH(+4))
+        name_key = ''
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': '',
+            'long_name': '',
+            'date': date_key,
+            'collect_traditional': 'page  under ""',
+            'collect_contemporary': 'page  under ""',
+            'psalm_morning': 'Psalm ',
+            'psalm_evening': 'Psalm ',
+            'reading_morning_y1': '',
+            'reading_morning_y2': '',
+            'reading_evening_y1': '',
+            'reading_evening_y2': '',
+        }
+
         # Saint Andrew the Apostle
         date_key = date(year, 11, 30)
         name_key = ''
@@ -512,102 +602,6 @@ class LiturgicalDay(dict):
 
         # The Holy Innocents
         date_key = date(year, 12, 28)
-        name_key = ''
-        switch_key = self.key_switcher(date_key, name_key)
-        self[switch_key] = {
-            'name': '',
-            'long_name': '',
-            'date': date_key,
-            'collect_traditional': 'page  under ""',
-            'collect_contemporary': 'page  under ""',
-            'psalm_morning': 'Psalm ',
-            'psalm_evening': 'Psalm ',
-            'reading_morning_y1': '',
-            'reading_morning_y2': '',
-            'reading_evening_y1': '',
-            'reading_evening_y2': '',
-        }
-
-        # Thanksgiving Day
-        date_key = date(year, 11, 1) + rd(weekday=TH(+4))
-        name_key = ''
-        switch_key = self.key_switcher(date_key, name_key)
-        self[switch_key] = {
-            'name': '',
-            'long_name': '',
-            'date': date_key,
-            'collect_traditional': 'page  under ""',
-            'collect_contemporary': 'page  under ""',
-            'psalm_morning': 'Psalm ',
-            'psalm_evening': 'Psalm ',
-            'reading_morning_y1': '',
-            'reading_morning_y2': '',
-            'reading_evening_y1': '',
-            'reading_evening_y2': '',
-        }
-
-        #============================Tier 6============================
-
-
-
-        #============================Tier 5============================
-
-        # The Annunciation of Our Lord Jesus Christ to the Blessed Virgin Mary
-        date_key = date(year, 3, 25)
-        name_key = ''
-        switch_key = self.key_switcher(date_key, name_key)
-        self[switch_key] = {
-            'name': '',
-            'long_name': '',
-            'date': date_key,
-            'collect_traditional': 'page  under ""',
-            'collect_contemporary': 'page  under ""',
-            'psalm_morning': 'Psalm ',
-            'psalm_evening': 'Psalm ',
-            'reading_morning_y1': '',
-            'reading_morning_y2': '',
-            'reading_evening_y1': '',
-            'reading_evening_y2': '',
-        }
-
-        # The Visitation of the Blessed Virgin Mary
-        date_key = date(year, 5, 31)
-        name_key = ''
-        switch_key = self.key_switcher(date_key, name_key)
-        self[switch_key] = {
-            'name': '',
-            'long_name': '',
-            'date': date_key,
-            'collect_traditional': 'page  under ""',
-            'collect_contemporary': 'page  under ""',
-            'psalm_morning': 'Psalm ',
-            'psalm_evening': 'Psalm ',
-            'reading_morning_y1': '',
-            'reading_morning_y2': '',
-            'reading_evening_y1': '',
-            'reading_evening_y2': '',
-        }
-
-        # The Nativity of Saint John the Baptist
-        date_key = date(year, 6, 24)
-        name_key = ''
-        switch_key = self.key_switcher(date_key, name_key)
-        self[switch_key] = {
-            'name': '',
-            'long_name': '',
-            'date': date_key,
-            'collect_traditional': 'page  under ""',
-            'collect_contemporary': 'page  under ""',
-            'psalm_morning': 'Psalm ',
-            'psalm_evening': 'Psalm ',
-            'reading_morning_y1': '',
-            'reading_morning_y2': '',
-            'reading_evening_y1': '',
-            'reading_evening_y2': '',
-        }
-
-        # Holy Cross Day
-        date_key = date(year, 9, 14)
         name_key = ''
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
