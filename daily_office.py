@@ -633,6 +633,24 @@ class LiturgicalDay(dict):
 
         #============================Tier 3============================
 
+        # The Sunday of the Passion: Palm Sunday
+        date_key = easter(year) - rd(weeks=1)
+        name_key = 'PALM_SUNDAY'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Palm Sunday',
+            'long_name': 'The Sunday of the Passion: Palm Sunday',
+            'date': date_key,
+            'collect_traditional': 'page 168 under "Sunday of the Passion: Palm Sunday"',
+            'collect_contemporary': 'page 219 under "Sunday of the Passion: Palm Sunday"',
+            'psalm_morning': 'Psalm 24, 29',
+            'psalm_evening': 'Psalm 103',
+            'reading_morning_y1': 'Zech. 9:9-12      1 Tim. 6:12-16',
+            'reading_morning_y2': 'Zech. 9:9-12      1 Tim. 6:12-16',
+            'reading_evening_y1': 'Zech. 12:9-11, 13:1, 7-9      Matt. 21:12-17',
+            'reading_evening_y2': 'Zech. 12:9-11; 13:1, 7-9      Luke 19:41-48',
+        }
+
         # The First Sunday of Advent
         date_key = date(year, 12, 25) - rd(days=1, weekday=SU(-4))
         name_key = 'FIRST_SUNDAY_OF_ADVENT'
