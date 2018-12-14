@@ -7,7 +7,7 @@ from dateutil.easter import easter
 from dateutil.parser import parse
 from dateutil.relativedelta import relativedelta as rd
 from dateutil.relativedelta import MO, TU, WE, TH, FR, SA, SU
-from datetime import datetime, date, time, timedelta
+from datetime import datetime, date, time
 
 class CanonicalHour(Enum):
     '''
@@ -912,7 +912,7 @@ class DailyOffice:
         return CanonicalHour(hours_enum)
 
 if __name__ == '__main__':
-    d = timedelta(hours=0)
+    d = rd(hours=0)
     test = DailyOffice(now=datetime.now() + d)
     print(str(test.now))
     print(str(test.cycle.value))
