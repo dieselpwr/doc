@@ -27,14 +27,16 @@ class CycleYear(Enum):
     YEAR_ONE = 1
     YEAR_TWO = 2
 
-
-class LiturgicalRite(Enum):
+class LiturgicalSeason(Enum):
     '''
-    enumeration or liturgical rites
+    enumeration of season of the Christian church
     '''
-    RITE_ONE = 1
-    RITE_TWO = 2
-
+    ADVENT = 0
+    CHRISTMAS = 1
+    EPIPHANY = 2
+    LENT = 3
+    EASTER = 4
+    ORDINARY = 5
 
 class LiturgicalDay(dict):
     '''
