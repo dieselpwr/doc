@@ -4,6 +4,7 @@ Daily Office Companion
 
 from enum import Enum
 from random import choice
+from calendar import day_name
 from dateutil.easter import easter
 from dateutil.parser import parse
 from dateutil.relativedelta import relativedelta as rd
@@ -366,7 +367,7 @@ class LiturgicalDay(dict):
 
         # Ash Wednesday
         date_key = easter(year) - rd(days=46)
-        name_key = ''
+        name_key = 'ASH_WEDNESDAY'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'Ash Wednesday',
@@ -514,35 +515,23 @@ class LiturgicalDay(dict):
             'date': date_key,
         }
 
-
-class LiturgicalSpan:
-    '''
-    functions returning boolean based on whether the given datetime is
-    in a particular span/season
-    '''
-
-    def __init__(self, now=datetime.now()):
-        '''
-        initializes the class
-        '''
-        self.now = now
-        self.lday = LiturgicalDay(year=now.year, switch=True)
-
-
 class DailyOffice:
     '''
     superclass for the individual offices
     '''
+    # TODO: somehow add liturgical week
 
     def __init__(self, now=datetime.now()):
         '''
         initializes the class
         '''
         self.now = now
+        self.ldate = LiturgicalDay(year=now.year, switch=False)
         self.lday = LiturgicalDay(year=now.year, switch=True)
-        self.lspan = LiturgicalSpan(now=now)
         self.cycle = self.get_cycle()
         self.hour = self.get_hour()
+        self.season = self.get_season()
+        self.day = self.get_day()
 
     def get_cycle(self):
         '''
@@ -577,10 +566,41 @@ class DailyOffice:
         hours_enum = diffs.index(min(diffs))
         return CanonicalHour(hours_enum)
 
+    def get_season(self):
+        '''
+        returns the current season
+        '''
+        season_enum = None
+        if self.lday.get('first sunday of advent')['date'] <= self.now.date() <= self.lday.get('christmas eve')['date']:
+            season_enum = 0
+        elif self.now.date() >= self.lday.get('christmas day')['date'] or self.now.date() <= self.lday.get('eve of epiphany')['date']:
+            season_enum = 1
+        elif self.lday.get('the epiphany')['date'] <= self.now.date() < self.lday.get('ash wednesday')['date']:
+            season_enum = 2
+        elif self.lday.get('ash wednesday')['date'] <= self.now.date() < self.lday.get('easter day')['date']:
+            season_enum = 3
+        elif self.lday.get('easter day')['date'] <= self.now.date() <= self.lday.get('trinity sunday')['date']:
+            season_enum = 4
+        else:
+            season_enum = 5
+        return LiturgicalSeason(season_enum)
+    
+    def get_day(self):
+        '''
+        returns relevant holy date or day of week name
+        '''
+        day = None
+        if self.now.date() in self.ldate:
+            day = self.ldate.get(self.now.date())['name']
+        else:
+            day = day_name[self.now.date().weekday()]
+        return day
 
 if __name__ == '__main__':
-    d = rd(hours=0)
+    d = rd(days=6)
     test = DailyOffice(now=datetime.now() + d)
     print(str(test.now))
     print(str(test.cycle.value))
     print(str(test.hour.name))
+    print(str(test.season.name))
+    print(str(test.day))
