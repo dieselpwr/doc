@@ -146,6 +146,15 @@ class LiturgicalDay(dict):
             'date': date_key,
         }
 
+        # Eve of the Annunciation
+        date_key = date(year, 3, 24)
+        name_key = 'EVE_OF_THE_ANNUNCIATION'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Eve of the Annunciation',
+            'date': date_key,
+        }
+
         # The Annunciation of Our Lord Jesus Christ to the Blessed Virgin Mary
         date_key = date(year, 3, 25)
         name_key = 'THE_ANNUNCIATION'
@@ -173,6 +182,15 @@ class LiturgicalDay(dict):
             'date': date_key,
         }
 
+        # Eve of the Visitation
+        date_key = date(year, 5, 30)
+        name_key = 'EVE_OF_THE_VISITATION'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Eve of the Visitation',
+            'date': date_key,
+        }
+
         # The Visitation of the Blessed Virgin Mary
         date_key = date(year, 5, 31)
         name_key = 'THE_VISITATION'
@@ -188,6 +206,15 @@ class LiturgicalDay(dict):
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'Saint Barnabas the Apostle',
+            'date': date_key,
+        }
+
+        # Eve of Saint John the Baptist
+        date_key = date(year, 6, 23)
+        name_key = 'EVE_OF_ST_JOHN_THE_BAPTIST'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Eve of Saint John the Baptist',
             'date': date_key,
         }
 
@@ -252,6 +279,16 @@ class LiturgicalDay(dict):
         self[switch_key] = {
             'name': 'Saint Bartholomew the Apostle',
             'date': date_key,
+        }
+
+        # Eve of Holy Cross
+        date_key = date(year, 9, 13)
+        name_key = 'EVE_OF_HOLY_CROSS'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Eve of Holy Cross',
+            'date': date_key,
+            'evening_only': True,
         }
 
         # Holy Cross Day
@@ -404,12 +441,30 @@ class LiturgicalDay(dict):
             'date': date_key,
         }
 
+        # Eve of the Presentation
+        date_key = date(year, 2, 1)
+        name_key = 'EVE_OF_THE_PRESENTATION'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Eve of the Presentation',
+            'date': date_key,
+        }
+
         # The Presentation of Our Lord Jesus Christ in the Temple
         date_key = date(year, 2, 2)
         name_key = 'THE_PRESENTATION'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'The Presentation of Our Lord Jesus Christ in the Temple',
+            'date': date_key,
+        }
+
+        # Eve of the Transfiguration
+        date_key = date(year, 8, 5)
+        name_key = 'EVE_OF_THE_TRANSFIGURATION'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Eve of the Transfiguration',
             'date': date_key,
         }
 
@@ -475,6 +530,15 @@ class LiturgicalDay(dict):
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'The First Sunday after Pentecost: Trinity Sunday',
+            'date': date_key,
+        }
+
+        # Eve of All Saints
+        date_key = date(year, 10, 31)
+        name_key = 'EVE_OF_ALL_SAINTS'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Eve of All Saints',
             'date': date_key,
         }
 
@@ -553,26 +617,15 @@ class DailyOffice:
                 cycle_enum = 2
         return CycleYear(cycle_enum)
 
-    def get_hour(self):
-        '''
-        returns the appropriate cannonical hour based on time
-        '''
-        morning = abs((self.now - datetime.combine(self.now.date(), time(6, 0))).total_seconds())
-        noonday = abs((self.now - datetime.combine(self.now.date(), time(12, 0))).total_seconds())
-        evening = abs((self.now - datetime.combine(self.now.date(), time(18, 0))).total_seconds())
-        compline = abs((self.now - datetime.combine(self.now.date(), time(21, 0))).total_seconds())
-        diffs = (morning, noonday, evening, compline)
-        hours_enum = diffs.index(min(diffs))
-        return CanonicalHour(hours_enum)
-
     def get_season(self):
         '''
         returns the current season
         '''
+        # TODO: handle vespers cutover
         season_enum = None
-        if self.lday.get('first sunday of advent')['date'] <= self.now.date() <= self.lday.get('christmas eve')['date']:
+        if self.lday.get('first sunday of advent')['date'] <= self.now.date() < self.lday.get('christmas day')['date']:
             season_enum = 0
-        elif self.now.date() >= self.lday.get('christmas day')['date'] or self.now.date() <= self.lday.get('eve of epiphany')['date']:
+        elif self.now.date() >= self.lday.get('christmas day')['date'] or self.now.date() < self.lday.get('the epiphany')['date']:
             season_enum = 1
         elif self.lday.get('the epiphany')['date'] <= self.now.date() < self.lday.get('ash wednesday')['date']:
             season_enum = 2
@@ -594,6 +647,19 @@ class DailyOffice:
         else:
             day = day_name[self.now.date().weekday()]
         return day
+
+    def get_hour(self):
+        '''
+        returns the appropriate cannonical hour based on time
+        '''
+        morning = abs((self.now - datetime.combine(self.now.date(), time(6, 0))).total_seconds())
+        noonday = abs((self.now - datetime.combine(self.now.date(), time(12, 0))).total_seconds())
+        evening = abs((self.now - datetime.combine(self.now.date(), time(18, 0))).total_seconds())
+        compline = abs((self.now - datetime.combine(self.now.date(), time(21, 0))).total_seconds())
+        diffs = (morning, noonday, evening, compline)
+        hours_enum = diffs.index(min(diffs))
+        return CanonicalHour(hours_enum)
+
 
 if __name__ == '__main__':
     d = rd(days=0)
