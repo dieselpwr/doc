@@ -153,6 +153,7 @@ class LiturgicalDay(dict):
         self[switch_key] = {
             'name': 'Eve of the Annunciation',
             'date': date_key,
+            'evening_only': True,
         }
 
         # The Annunciation of Our Lord Jesus Christ to the Blessed Virgin Mary
@@ -189,6 +190,7 @@ class LiturgicalDay(dict):
         self[switch_key] = {
             'name': 'Eve of the Visitation',
             'date': date_key,
+            'evening_only': True,
         }
 
         # The Visitation of the Blessed Virgin Mary
@@ -216,6 +218,7 @@ class LiturgicalDay(dict):
         self[switch_key] = {
             'name': 'Eve of Saint John the Baptist',
             'date': date_key,
+            'evening_only': True,
         }
 
         # The Nativity of Saint John the Baptist
@@ -448,6 +451,7 @@ class LiturgicalDay(dict):
         self[switch_key] = {
             'name': 'Eve of the Presentation',
             'date': date_key,
+            'evening_only': True,
         }
 
         # The Presentation of Our Lord Jesus Christ in the Temple
@@ -466,6 +470,7 @@ class LiturgicalDay(dict):
         self[switch_key] = {
             'name': 'Eve of the Transfiguration',
             'date': date_key,
+            'evening_only': True,
         }
 
         # The Transfiguration of Our Lord Jesus Christ
@@ -486,6 +491,7 @@ class LiturgicalDay(dict):
         self[switch_key] = {
             'name': 'Eve of Epiphany',
             'date': date_key,
+            'evening_only': True,
         }
 
         # The Epiphany of Our Lord Jesus Christ
@@ -540,6 +546,7 @@ class LiturgicalDay(dict):
         self[switch_key] = {
             'name': 'Eve of All Saints',
             'date': date_key,
+            'evening_only': True,
         }
 
         # All Saint's Day
@@ -558,6 +565,7 @@ class LiturgicalDay(dict):
         self[switch_key] = {
             'name': 'Christmas Eve',
             'date': date_key,
+            'evening_only': True,
         }
 
         # The Nativity of Our Lord Jesus Christ
@@ -576,6 +584,7 @@ class LiturgicalDay(dict):
         self[switch_key] = {
             'name': 'Eve of Holy Name',
             'date': date_key,
+            'evening_only': True,
         }
 
 class DailyOffice:
