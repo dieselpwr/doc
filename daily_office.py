@@ -3,7 +3,6 @@ Daily Office Companion
 '''
 
 from enum import Enum
-from random import choice
 from calendar import day_name
 from dateutil.easter import easter
 from dateutil.parser import parse
