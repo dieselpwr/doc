@@ -20,7 +20,6 @@ class CanonicalHour(Enum):
     EVENING = 2
     COMPLINE = 3
 
-
 class CycleYear(Enum):
     '''
     enumeration of daily office cycle years
@@ -113,7 +112,7 @@ class LiturgicalDay(dict):
 
         # The Confession of Saint Peter the Apostle
         date_key = date(year, 1, 18)
-        name_key = ''
+        name_key = 'CONFESSION_OF_ST_PETER'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'The Confession of Saint Peter the Apostle',
@@ -122,7 +121,7 @@ class LiturgicalDay(dict):
 
         # The Conversion of Saint Paul the Apostle
         date_key = date(year, 1, 25)
-        name_key = ''
+        name_key = 'CONVERSION_OF_ST_PAUL'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'The Conversion of Saint Paul the Apostle',
@@ -131,7 +130,7 @@ class LiturgicalDay(dict):
 
         # Saint Matthias the Apostle
         date_key = date(year, 2, 24)
-        name_key = ''
+        name_key = 'ST_MATTHIAS'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'Saint Matthias the Apostle',
@@ -140,7 +139,7 @@ class LiturgicalDay(dict):
 
         # Saint Joseph
         date_key = date(year, 3, 19)
-        name_key = ''
+        name_key = 'ST_JOSEPH'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'Saint Joseph',
@@ -149,7 +148,7 @@ class LiturgicalDay(dict):
 
         # The Annunciation of Our Lord Jesus Christ to the Blessed Virgin Mary
         date_key = date(year, 3, 25)
-        name_key = ''
+        name_key = 'THE_ANNUNCIATION'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'The Annunciation of Our Lord Jesus Christ to the Blessed Virgin Mary',
@@ -158,7 +157,7 @@ class LiturgicalDay(dict):
 
         # Saint Mark the Evangelist
         date_key = date(year, 4, 25)
-        name_key = ''
+        name_key = 'SS_PHILLIP_JAMES'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'Saint Mark the Evangelist',
@@ -167,7 +166,7 @@ class LiturgicalDay(dict):
 
         # Saint Philip and Saint James, Apostles
         date_key = date(year, 5, 1)
-        name_key = ''
+        name_key = 'SS_PHILIP_JAMES'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'Saint Philip and Saint James, Apostles',
@@ -176,7 +175,7 @@ class LiturgicalDay(dict):
 
         # The Visitation of the Blessed Virgin Mary
         date_key = date(year, 5, 31)
-        name_key = ''
+        name_key = 'THE_VISITATION'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'The Visitation of the Blessed Virgin Mary',
@@ -185,7 +184,7 @@ class LiturgicalDay(dict):
 
         # Saint Barnabas the Apostle
         date_key = date(year, 6, 11)
-        name_key = ''
+        name_key = 'ST_BARNABAS'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'Saint Barnabas the Apostle',
@@ -194,7 +193,7 @@ class LiturgicalDay(dict):
 
         # The Nativity of Saint John the Baptist
         date_key = date(year, 6, 24)
-        name_key = ''
+        name_key = 'ST_JOHN_THE_BAPTIST'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'The Nativity of Saint John the Baptist',
@@ -203,7 +202,7 @@ class LiturgicalDay(dict):
 
         # Saint Peter and Saint Paul, Apostles
         date_key = date(year, 6, 29)
-        name_key = ''
+        name_key = 'SS_PETER_PAUL'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'Saint Peter and Saint Paul, Apostles',
@@ -212,7 +211,7 @@ class LiturgicalDay(dict):
 
         # Independence Day
         date_key = date(year, 7, 4)
-        name_key = ''
+        name_key = 'INDEPENDENCE_DAY'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'Independence Day',
@@ -221,7 +220,7 @@ class LiturgicalDay(dict):
 
         # Saint Mary Magdalene
         date_key = date(year, 7, 22)
-        name_key = ''
+        name_key = 'ST_MARY_MAGDALENE'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'Saint Mary Magdalene',
@@ -230,7 +229,7 @@ class LiturgicalDay(dict):
 
         # Saint James the Apostle
         date_key = date(year, 7, 25)
-        name_key = ''
+        name_key = 'ST_JAMES'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'Saint James the Apostle',
@@ -239,7 +238,7 @@ class LiturgicalDay(dict):
 
         # Saint Mary the Virgin, Mother of Our Lord Jesus Christ
         date_key = date(year, 8, 15)
-        name_key = ''
+        name_key = 'ST_MARY_THE_VIRGIN'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'Saint Mary the Virgin, Mother of Our Lord Jesus Christ',
@@ -248,7 +247,7 @@ class LiturgicalDay(dict):
 
         # Saint Bartholomew the Apostle
         date_key = date(year, 8, 24)
-        name_key = ''
+        name_key = 'ST_BARTHOLOMEW'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'Saint Bartholomew the Apostle',
@@ -257,7 +256,7 @@ class LiturgicalDay(dict):
 
         # Holy Cross Day
         date_key = date(year, 9, 14)
-        name_key = ''
+        name_key = 'HOLY_CROSS_DAY'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'Holy Cross Day',
@@ -266,7 +265,7 @@ class LiturgicalDay(dict):
 
         # Saint Matthew, Apostle and Evangelist
         date_key = date(year, 9, 21)
-        name_key = ''
+        name_key = 'ST_MATTHEW'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'Saint Matthew, Apostle and Evangelist',
@@ -275,7 +274,7 @@ class LiturgicalDay(dict):
 
         # Saint Michael and All Angels
         date_key = date(year, 9, 29)
-        name_key = ''
+        name_key = 'ST_MICHAEL_ALL_ANGELS'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'Saint Michael and All Angels',
@@ -284,7 +283,7 @@ class LiturgicalDay(dict):
 
         # Saint Luke the Evangelist
         date_key = date(year, 10, 18)
-        name_key = ''
+        name_key = 'ST_LUKE'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'Saint Luke the Evangelist',
@@ -293,7 +292,7 @@ class LiturgicalDay(dict):
 
         # Saint James of Jerusalem, Brother of Our Lord Jesus Christ, and Martyr
         date_key = date(year, 10, 23)
-        name_key = ''
+        name_key = 'ST_JAMES_OF_JERUSALEM'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'Saint James of Jerusalem, Brother of Our Lord Jesus Christ, and Martyr',
@@ -302,7 +301,7 @@ class LiturgicalDay(dict):
 
         # Saint Simon and Saint Jude, Apostles
         date_key = date(year, 10, 28)
-        name_key = ''
+        name_key = 'SS_SIMON_JUDE'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'Saint Simon and Saint Jude, Apostles',
@@ -311,7 +310,7 @@ class LiturgicalDay(dict):
 
         # Thanksgiving Day
         date_key = date(year, 11, 1) + rd(weekday=TH(+4))
-        name_key = ''
+        name_key = 'THANKSGIVING_DAY'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'Thanksgiving Day',
@@ -320,7 +319,7 @@ class LiturgicalDay(dict):
 
         # Saint Andrew the Apostle
         date_key = date(year, 11, 30)
-        name_key = ''
+        name_key = 'ST_ANDREW'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'Saint Andrew the Apostle',
@@ -329,7 +328,7 @@ class LiturgicalDay(dict):
 
         # Saint Thomas the Apostle
         date_key = date(year, 12, 21)
-        name_key = ''
+        name_key = 'ST_THOMAS'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'Saint Thomas the Apostle',
@@ -338,7 +337,7 @@ class LiturgicalDay(dict):
 
         # Saint Stephen, Deacon and Martyr
         date_key = date(year, 12, 26)
-        name_key = ''
+        name_key = 'ST_STEPHEN'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'Saint Stephen, Deacon and Martyr',
@@ -347,7 +346,7 @@ class LiturgicalDay(dict):
 
         # Saint John, Apostle and Evangelist
         date_key = date(year, 12, 27)
-        name_key = ''
+        name_key = 'ST_JOHN'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'Saint John, Apostle and Evangelist',
@@ -356,7 +355,7 @@ class LiturgicalDay(dict):
 
         # The Holy Innocents
         date_key = date(year, 12, 28)
-        name_key = ''
+        name_key = 'HOLY_INNOCENTS'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'The Holy Innocents',
@@ -529,9 +528,9 @@ class DailyOffice:
         self.ldate = LiturgicalDay(year=now.year, switch=False)
         self.lday = LiturgicalDay(year=now.year, switch=True)
         self.cycle = self.get_cycle()
-        self.hour = self.get_hour()
         self.season = self.get_season()
         self.day = self.get_day()
+        self.hour = self.get_hour()
 
     def get_cycle(self):
         '''
@@ -584,7 +583,7 @@ class DailyOffice:
         else:
             season_enum = 5
         return LiturgicalSeason(season_enum)
-    
+
     def get_day(self):
         '''
         returns relevant holy date or day of week name
@@ -597,10 +596,9 @@ class DailyOffice:
         return day
 
 if __name__ == '__main__':
-    d = rd(days=6)
+    d = rd(days=0)
     test = DailyOffice(now=datetime.now() + d)
-    print(str(test.now))
-    print(str(test.cycle.value))
-    print(str(test.hour.name))
+    print(str(test.cycle.name))
     print(str(test.season.name))
     print(str(test.day))
+    print(str(test.hour.name))
