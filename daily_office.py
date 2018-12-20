@@ -10,14 +10,6 @@ from dateutil.relativedelta import relativedelta as rd
 from dateutil.relativedelta import MO, TU, WE, TH, FR, SA, SU
 from datetime import datetime, date, time
 
-class CanonicalHour(Enum):
-    '''
-    enumeration of canonical hours
-    '''
-    MORNING = 0
-    NOONDAY = 1
-    EVENING = 2
-    COMPLINE = 3
 
 class CycleYear(Enum):
     '''
@@ -25,6 +17,7 @@ class CycleYear(Enum):
     '''
     YEAR_ONE = 1
     YEAR_TWO = 2
+
 
 class LiturgicalSeason(Enum):
     '''
@@ -36,6 +29,17 @@ class LiturgicalSeason(Enum):
     LENT = 3
     EASTER = 4
     ORDINARY = 5
+
+
+class CanonicalHour(Enum):
+    '''
+    enumeration of canonical hours
+    '''
+    MORNING = 0
+    NOONDAY = 1
+    EVENING = 2
+    COMPLINE = 3
+
 
 class LiturgicalDay(dict):
     '''
