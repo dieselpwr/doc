@@ -427,12 +427,90 @@ class LiturgicalDay(dict):
             'date': date_key,
         }
 
-        # The First Sunday of Advent
+        # First Sunday of Advent
         date_key = date(year, 12, 25) - rd(days=1, weekday=SU(-4))
         name_key = 'FIRST_SUNDAY_OF_ADVENT'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'The First Sunday of Advent',
+            'name': 'First Sunday of Advent',
+            'date': date_key,
+        }
+
+        # Second Sunday of Advent
+        date_key = date(year, 12, 25) - rd(days=1, weekday=SU(-3))
+        name_key = 'SECOND_SUNDAY_OF_ADVENT'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Second Sunday of Advent',
+            'date': date_key,
+        }
+
+        # Third Sunday of Advent
+        date_key = date(year, 12, 25) - rd(days=1, weekday=SU(-2))
+        name_key = 'THIRD_SUNDAY_OF_ADVENT'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Third Sunday of Advent',
+            'date': date_key,
+        }
+
+        # Fourth Sunday of Advent
+        date_key = date(year, 12, 25) - rd(days=1, weekday=SU(-1))
+        name_key = 'FOURTH_SUNDAY_OF_ADVENT'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Fourth Sunday of Advent',
+            'date': date_key,
+        }
+
+        # First Sunday after Christmas Day
+        date_key = date(year, 12, 25) + rd(days=1, weekday=SU(+1))
+        name_key = 'FIRST_SUNDAY_AFTER_CHRISTMAS'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'First Sunday after Christmas Day',
+            'date': date_key,
+        }
+
+        # Second Sunday after Christmas Day
+        date_key = date(year, 12, 25) + rd(days=1, weekday=SU(+2))
+        name_key = 'SECOND_SUNDAY_AFTER_CHRISTMAS'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Second Sunday after Christmas Day',
+            'date': date_key,
+        }
+
+        # First Sunday after the Epiphany: The Baptism of our Lord
+        date_key = date(year, 1, 6) + rd(days=1, weekday=SU(+1))
+        if date_key >= (easter(year) - rd(days=46, weekday=SU(-1))):
+            date_key = date(1970, 1, 1)
+        name_key = 'FIRST_SUNDAY_AFTER_EPIPHANY'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'First Sunday after the Epiphany: The Baptism of our Lord',
+            'date': date_key,
+        }
+
+        # Second Sunday after the Epiphany:
+        date_key = date(year, 1, 6) + rd(days=1, weekday=SU(+2))
+        if date_key >= (easter(year) - rd(days=46, weekday=SU(-1))):
+            date_key = date(1970, 1, 1)
+        name_key = 'SECOND_SUNDAY_AFTER_EPIPHANY'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Second Sunday after the Epiphany',
+            'date': date_key,
+        }
+
+        # Third Sunday after the Epiphany:
+        date_key = date(year, 1, 6) + rd(days=1, weekday=SU(+3))
+        if date_key >= (easter(year) - rd(days=46, weekday=SU(-1))):
+            date_key = date(1970, 1, 1)
+        name_key = 'THIRD_SUNDAY_AFTER_EPIPHANY'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Third Sunday after the Epiphany',
             'date': date_key,
         }
 
