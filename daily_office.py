@@ -418,15 +418,6 @@ class LiturgicalDay(dict):
 
         #============================Tier 3============================
 
-        # The Sunday of the Passion: Palm Sunday
-        date_key = easter(year) - rd(weeks=1)
-        name_key = 'PALM_SUNDAY'
-        switch_key = self.key_switcher(date_key, name_key)
-        self[switch_key] = {
-            'name': 'The Sunday of the Passion: Palm Sunday',
-            'date': date_key,
-        }
-
         # First Sunday of Advent
         date_key = date(year, 12, 25) - rd(days=1, weekday=SU(-4))
         name_key = 'FIRST_SUNDAY_OF_ADVENT'
@@ -492,7 +483,7 @@ class LiturgicalDay(dict):
             'date': date_key,
         }
 
-        # Second Sunday after the Epiphany:
+        # Second Sunday after the Epiphany
         date_key = date(year, 1, 6) + rd(days=1, weekday=SU(+2))
         if date_key >= (easter(year) - rd(days=46, weekday=SU(-1))):
             date_key = date(1970, 1, 1)
@@ -503,7 +494,7 @@ class LiturgicalDay(dict):
             'date': date_key,
         }
 
-        # Third Sunday after the Epiphany:
+        # Third Sunday after the Epiphany
         date_key = date(year, 1, 6) + rd(days=1, weekday=SU(+3))
         if date_key >= (easter(year) - rd(days=46, weekday=SU(-1))):
             date_key = date(1970, 1, 1)
@@ -514,7 +505,7 @@ class LiturgicalDay(dict):
             'date': date_key,
         }
 
-        # Fourth Sunday after the Epiphany:
+        # Fourth Sunday after the Epiphany
         date_key = date(year, 1, 6) + rd(days=1, weekday=SU(+4))
         if date_key >= (easter(year) - rd(days=46, weekday=SU(-1))):
             date_key = date(1970, 1, 1)
@@ -525,7 +516,7 @@ class LiturgicalDay(dict):
             'date': date_key,
         }
 
-        # Fifth Sunday after the Epiphany:
+        # Fifth Sunday after the Epiphany
         date_key = date(year, 1, 6) + rd(days=1, weekday=SU(+5))
         if date_key >= (easter(year) - rd(days=46, weekday=SU(-1))):
             date_key = date(1970, 1, 1)
@@ -536,7 +527,7 @@ class LiturgicalDay(dict):
             'date': date_key,
         }
 
-        # Sixth Sunday after the Epiphany:
+        # Sixth Sunday after the Epiphany
         date_key = date(year, 1, 6) + rd(days=1, weekday=SU(+6))
         if date_key >= (easter(year) - rd(days=46, weekday=SU(-1))):
             date_key = date(1970, 1, 1)
@@ -547,7 +538,7 @@ class LiturgicalDay(dict):
             'date': date_key,
         }
 
-        # Seventh Sunday after the Epiphany:
+        # Seventh Sunday after the Epiphany
         date_key = date(year, 1, 6) + rd(days=1, weekday=SU(+7))
         if date_key >= (easter(year) - rd(days=46, weekday=SU(-1))):
             date_key = date(1970, 1, 1)
@@ -558,7 +549,7 @@ class LiturgicalDay(dict):
             'date': date_key,
         }
 
-        # Eighth Sunday after the Epiphany:
+        # Eighth Sunday after the Epiphany
         date_key = date(year, 1, 6) + rd(days=1, weekday=SU(+8))
         if date_key >= (easter(year) - rd(days=46, weekday=SU(-1))):
             date_key = date(1970, 1, 1)
@@ -569,12 +560,84 @@ class LiturgicalDay(dict):
             'date': date_key,
         }
 
-        # Last Sunday after the Epiphany:
+        # Last Sunday after the Epiphany
         date_key = (easter(year) - rd(days=46, weekday=SU(-1)))
         name_key = 'LAST_SUNDAY_AFTER_EPIPHANY'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'Last Sunday after the Epiphany',
+            'date': date_key,
+        }
+
+        # First Sunday in Lent
+        date_key = (easter(year) - rd(days=46) + rd(days=1, weekday=SU(+1)))
+        name_key = 'FIRST_SUNDAY_IN_LENT'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'First Sunday in Lent',
+            'date': date_key,
+        }
+
+        # Second Sunday in Lent
+        date_key = (easter(year) - rd(days=46) + rd(days=1, weekday=SU(+2)))
+        name_key = 'SECOND_SUNDAY_IN_LENT'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Second Sunday in Lent',
+            'date': date_key,
+        }
+
+        # Third Sunday in Lent
+        date_key = (easter(year) - rd(days=46) + rd(days=1, weekday=SU(+3)))
+        name_key = 'THIRD_SUNDAY_IN_LENT'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Third Sunday in Lent',
+            'date': date_key,
+        }
+
+        # Fourth Sunday in Lent
+        date_key = (easter(year) - rd(days=46) + rd(days=1, weekday=SU(+4)))
+        name_key = 'FOURTH_SUNDAY_IN_LENT'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Fourth Sunday in Lent',
+            'date': date_key,
+        }
+
+        # Fifth Sunday in Lent
+        date_key = (easter(year) - rd(days=46) + rd(days=1, weekday=SU(+5)))
+        name_key = 'FIFTH_SUNDAY_IN_LENT'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Fifth Sunday in Lent',
+            'date': date_key,
+        }
+
+        # The Sunday of the Passion: Palm Sunday
+        date_key = easter(year) - rd(weeks=1)
+        name_key = 'PALM_SUNDAY'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'The Sunday of the Passion: Palm Sunday',
+            'date': date_key,
+        }
+
+        # Second Sunday of Easter
+        date_key = easter(year) + rd(days=1, weekday=SU(+1))
+        name_key = 'SECOND_SUNDAY_OF_EASTER'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Second Sunday of Easter',
+            'date': date_key,
+        }
+
+        # Third Sunday of Easter
+        date_key = easter(year) + rd(days=1, weekday=SU(+2))
+        name_key = 'THIRD_SUNDAY_OF_EASTER'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Third Sunday of Easter',
             'date': date_key,
         }
 
@@ -654,6 +717,15 @@ class LiturgicalDay(dict):
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'The Sunday of the Resurrection, or Easter Day',
+            'date': date_key,
+        }
+
+        # Eve of Ascension Day
+        date_key = easter(year) + rd(days=38)
+        name_key = 'EVE_OF_ASCENSION_DAY'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Eve of Ascension Day',
             'date': date_key,
         }
 
