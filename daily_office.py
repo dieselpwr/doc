@@ -1176,9 +1176,13 @@ class DailyOffice:
         '''
         returns the current season
         '''
-        # TODO: handle vespers cutover
+        evening = self.now.time() > time(18, 0)
         season_enum = None
-        if self.lday.get('first sunday of advent')['date'] <= self.now.date() < self.lday.get('christmas day')['date']:
+        if bool(evening) and self.now.date() == self.lday.get('christmas eve')['date']:
+            season_enum = 1
+        elif bool(evening) and self.now.date() == self.lday.get('eve of epiphany')['date']:
+            season_enum = 2
+        elif self.lday.get('first sunday of advent')['date'] <= self.now.date() < self.lday.get('christmas day')['date']:
             season_enum = 0
         elif self.now.date() >= self.lday.get('christmas day')['date'] or self.now.date() < self.lday.get('the epiphany')['date']:
             season_enum = 1
