@@ -763,6 +763,7 @@ class LiturgicalDay(dict):
         self[switch_key] = {
             'name': 'Eve of Ascension Day',
             'date': date_key,
+            'evening_only': True,
         }
 
         # Ascension Day
@@ -781,6 +782,7 @@ class LiturgicalDay(dict):
         self[switch_key] = {
             'name': 'Eve of Pentecost',
             'date': date_key,
+            'evening_only': True,
         }
 
         # The Day of Pentecost: Whitsunday
