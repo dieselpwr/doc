@@ -615,7 +615,7 @@ class LiturgicalDay(dict):
         }
 
         # The Sunday of the Passion: Palm Sunday
-        date_key = easter(year) - rd(weeks=1)
+        date_key = easter(year) - rd(days=7)
         name_key = 'PALM_SUNDAY'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
@@ -638,6 +638,42 @@ class LiturgicalDay(dict):
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
             'name': 'Third Sunday of Easter',
+            'date': date_key,
+        }
+
+        # Fourth Sunday of Easter
+        date_key = easter(year) + rd(days=1, weekday=SU(+3))
+        name_key = 'FOURTH_SUNDAY_OF_EASTER'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Fourth Sunday of Easter',
+            'date': date_key,
+        }
+
+        # Fifth Sunday of Easter
+        date_key = easter(year) + rd(days=1, weekday=SU(+4))
+        name_key = 'FIFTH_SUNDAY_OF_EASTER'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Fifth Sunday of Easter',
+            'date': date_key,
+        }
+
+        # Sixth Sunday of Easter
+        date_key = easter(year) + rd(days=1, weekday=SU(+5))
+        name_key = 'SIXTH_SUNDAY_OF_EASTER'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Sixth Sunday of Easter',
+            'date': date_key,
+        }
+
+        # Seventh Sunday of Easter
+        date_key = easter(year) + rd(days=1, weekday=SU(+6))
+        name_key = 'SEVENTH_SUNDAY_OF_EASTER'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Seventh Sunday of Easter',
             'date': date_key,
         }
 
@@ -738,8 +774,17 @@ class LiturgicalDay(dict):
             'date': date_key,
         }
 
+        # Eve of Pentecost
+        date_key = easter(year) + rd(days=48)
+        name_key = 'EVE_OF_PENTECOST'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Eve of Pentecost',
+            'date': date_key,
+        }
+
         # The Day of Pentecost: Whitsunday
-        date_key = easter(year) + rd(weeks=7)
+        date_key = easter(year) + rd(days=49)
         name_key = 'WHITSUNDAY'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
