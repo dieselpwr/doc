@@ -514,6 +514,70 @@ class LiturgicalDay(dict):
             'date': date_key,
         }
 
+        # Fourth Sunday after the Epiphany:
+        date_key = date(year, 1, 6) + rd(days=1, weekday=SU(+4))
+        if date_key >= (easter(year) - rd(days=46, weekday=SU(-1))):
+            date_key = date(1970, 1, 1)
+        name_key = 'FOURTH_SUNDAY_AFTER_EPIPHANY'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Fourth Sunday after the Epiphany',
+            'date': date_key,
+        }
+
+        # Fifth Sunday after the Epiphany:
+        date_key = date(year, 1, 6) + rd(days=1, weekday=SU(+5))
+        if date_key >= (easter(year) - rd(days=46, weekday=SU(-1))):
+            date_key = date(1970, 1, 1)
+        name_key = 'FIFTH_SUNDAY_AFTER_EPIPHANY'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Fifth Sunday after the Epiphany',
+            'date': date_key,
+        }
+
+        # Sixth Sunday after the Epiphany:
+        date_key = date(year, 1, 6) + rd(days=1, weekday=SU(+6))
+        if date_key >= (easter(year) - rd(days=46, weekday=SU(-1))):
+            date_key = date(1970, 1, 1)
+        name_key = 'SIXTH_SUNDAY_AFTER_EPIPHANY'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Sixth day after the Epiphany',
+            'date': date_key,
+        }
+
+        # Seventh Sunday after the Epiphany:
+        date_key = date(year, 1, 6) + rd(days=1, weekday=SU(+7))
+        if date_key >= (easter(year) - rd(days=46, weekday=SU(-1))):
+            date_key = date(1970, 1, 1)
+        name_key = 'SEVENTH_SUNDAY_AFTER_EPIPHANY'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Seventh Sunday after the Epiphany',
+            'date': date_key,
+        }
+
+        # Eighth Sunday after the Epiphany:
+        date_key = date(year, 1, 6) + rd(days=1, weekday=SU(+8))
+        if date_key >= (easter(year) - rd(days=46, weekday=SU(-1))):
+            date_key = date(1970, 1, 1)
+        name_key = 'EIGHTH_SUNDAY_AFTER_EPIPHANY'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Eighth Sunday after the Epiphany',
+            'date': date_key,
+        }
+
+        # Last Sunday after the Epiphany:
+        date_key = (easter(year) - rd(days=46, weekday=SU(-1)))
+        name_key = 'LAST_SUNDAY_AFTER_EPIPHANY'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Last Sunday after the Epiphany',
+            'date': date_key,
+        }
+
         #============================Tier 2============================
 
         # The Holy Name of Our Lord Jesus Christ
