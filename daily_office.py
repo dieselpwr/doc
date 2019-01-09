@@ -1110,7 +1110,6 @@ class DailyOffice:
     '''
     superclass for the individual offices
     '''
-    # TODO: somehow add liturgical week
 
     def __init__(self, now=datetime.now()):
         '''
@@ -1121,6 +1120,7 @@ class DailyOffice:
         self.lday = LiturgicalDay(year=now.year, switch=True)
         self.cycle = self.get_cycle()
         self.season = self.get_season()
+        self.week = self.get_week()
         self.day = self.get_day()
         self.hour = self.get_hour()
 
@@ -1151,23 +1151,89 @@ class DailyOffice:
         '''
         evening = self.now.time() > time(18, 0)
         season_enum = None
-        if bool(evening) and self.now.date() == self.lday.get('christmas eve')['date']:
+        if bool(evening) and self.now.date() == self.lday.get('CHRISTMAS_EVE')['date']:
             season_enum = 1
-        elif bool(evening) and self.now.date() == self.lday.get('eve of epiphany')['date']:
+        elif bool(evening) and self.now.date() == self.lday.get('EVE_OF_EPIPHANY')['date']:
             season_enum = 2
-        elif self.lday.get('first sunday of advent')['date'] <= self.now.date() < self.lday.get('christmas day')['date']:
+        elif self.lday.get('FIRST_SUNDAY_OF_ADVENT')['date'] <= self.now.date() < self.lday.get('CHRISTMAS_DAY')['date']:
             season_enum = 0
-        elif self.now.date() >= self.lday.get('christmas day')['date'] or self.now.date() < self.lday.get('the epiphany')['date']:
+        elif self.now.date() >= self.lday.get('CHRISTMAS_DAY')['date'] or self.now.date() < self.lday.get('THE_EPIPHANY')['date']:
             season_enum = 1
-        elif self.lday.get('the epiphany')['date'] <= self.now.date() < self.lday.get('ash wednesday')['date']:
+        elif self.lday.get('THE_EPIPHANY')['date'] <= self.now.date() < self.lday.get('ASH_WEDNESDAY')['date']:
             season_enum = 2
-        elif self.lday.get('ash wednesday')['date'] <= self.now.date() < self.lday.get('easter day')['date']:
+        elif self.lday.get('ASH_WEDNESDAY')['date'] <= self.now.date() < self.lday.get('EASTER_DAY')['date']:
             season_enum = 3
-        elif self.lday.get('easter day')['date'] <= self.now.date() <= self.lday.get('trinity sunday')['date']:
+        elif self.lday.get('EASTER_DAY')['date'] <= self.now.date() <= self.lday.get('TRINITY_SUNDAY')['date']:
             season_enum = 4
         else:
             season_enum = 5
         return LiturgicalSeason(season_enum)
+
+    def get_week(self):
+        '''
+        returns the current week
+        '''
+        # TODO: add handling for evenings and figure out the propers
+        evening = self.now.time() > time(18, 0)
+        if self.lday.get('FIRST_SUNDAY_OF_ADVENT')['date'] <= self.now.date() < self.lday.get('SECOND_SUNDAY_OF_ADVENT')['date']:
+            week = 'Week of 1 Advent'
+        elif self.lday.get('SECOND_SUNDAY_OF_ADVENT')['date'] <= self.now.date() < self.lday.get('THIRD_SUNDAY_OF_ADVENT')['date']:
+            week = 'Week of 2 Advent'
+        elif self.lday.get('THIRD_SUNDAY_OF_ADVENT')['date'] <= self.now.date() < self.lday.get('FOURTH_SUNDAY_OF_ADVENT')['date']:
+            week = 'Week of 3 Advent'
+        elif self.lday.get('FOURTH_SUNDAY_OF_ADVENT')['date'] <= self.now.date() < self.lday.get('CHRISTMAS_DAY')['date']:
+            week = 'Week of 4 Advent'
+        elif self.now.date() >= self.lday.get('CHRISTMAS_DAY')['date'] or self.now.date() < self.lday.get('THE_EPIPHANY')['date']:
+            week = 'Christmas Day and Following'
+        elif self.lday.get('THE_EPIPHANY')['date'] <= self.now.date() < self.lday.get('FIRST_SUNDAY_AFTER_EPIPHANY')['date']:
+            week = 'The Epiphany and Following'
+        elif self.lday.get('FIRST_SUNDAY_AFTER_EPIPHANY')['date'] <= self.now.date() < self.lday.get('SECOND_SUNDAY_AFTER_EPIPHANY')['date']:
+            week = 'Week of 1 Epiphany'
+        elif self.lday.get('SECOND_SUNDAY_AFTER_EPIPHANY')['date'] <= self.now.date() < self.lday.get('THIRD_SUNDAY_AFTER_EPIPHANY')['date']:
+            week = 'Week of 2 Epiphany'
+        elif self.lday.get('THIRD_SUNDAY_AFTER_EPIPHANY')['date'] <= self.now.date() < self.lday.get('FOURTH_SUNDAY_AFTER_EPIPHANY')['date']:
+            week = 'Week of 3 Epiphany'
+        elif self.lday.get('FOURTH_SUNDAY_AFTER_EPIPHANY')['date'] <= self.now.date() < self.lday.get('FIFTH_SUNDAY_AFTER_EPIPHANY')['date']:
+            week = 'Week of 4 Epiphany'
+        elif self.lday.get('FIFTH_SUNDAY_AFTER_EPIPHANY')['date'] <= self.now.date() < self.lday.get('SIXTH_SUNDAY_AFTER_EPIPHANY')['date']:
+            week = 'Week of 5 Epiphany'
+        elif self.lday.get('SIXTH_SUNDAY_AFTER_EPIPHANY')['date'] <= self.now.date() < self.lday.get('SEVENTH_SUNDAY_AFTER_EPIPHANY')['date']:
+            week = 'Week of 6 Epiphany'
+        elif self.lday.get('SEVENTH_SUNDAY_AFTER_EPIPHANY')['date'] <= self.now.date() < self.lday.get('EIGHTH_SUNDAY_AFTER_EPIPHANY')['date']:
+            week = 'Week of 7 Epiphany'
+        elif self.lday.get('EIGHTH_SUNDAY_AFTER_EPIPHANY')['date'] <= self.now.date() < self.lday.get('LAST_SUNDAY_AFTER_EPIPHANY')['date']:
+            week = 'Week of 8 Epiphany'
+        elif self.lday.get('LAST_SUNDAY_AFTER_EPIPHANY')['date'] <= self.now.date() < self.lday.get('FIRST_SUNDAY_IN_LENT')['date']:
+            week = 'Week of Last Epiphany'
+        elif self.lday.get('FIRST_SUNDAY_IN_LENT')['date'] <= self.now.date() < self.lday.get('SECOND_SUNDAY_IN_LENT')['date']:
+            week = 'Week of 1 Lent'
+        elif self.lday.get('SECOND_SUNDAY_IN_LENT')['date'] <= self.now.date() < self.lday.get('THIRD_SUNDAY_IN_LENT')['date']:
+            week = 'Week of 2 Lent'
+        elif self.lday.get('THIRD_SUNDAY_IN_LENT')['date'] <= self.now.date() < self.lday.get('FOURTH_SUNDAY_IN_LENT')['date']:
+            week = 'Week of 3 Lent'
+        elif self.lday.get('FOURTH_SUNDAY_IN_LENT')['date'] <= self.now.date() < self.lday.get('FIFTH_SUNDAY_IN_LENT')['date']:
+            week = 'Week of 4 Lent'
+        elif self.lday.get('FIFTH_SUNDAY_IN_LENT')['date'] <= self.now.date() < self.lday.get('PALM_SUNDAY')['date']:
+            week = 'Week of 5 Lent'
+        elif self.lday.get('PALM_SUNDAY')['date'] <= self.now.date() < self.lday.get('EASTER_DAY')['date']:
+            week = 'Holy Week'
+        elif self.lday.get('EASTER_DAY')['date'] <= self.now.date() < self.lday.get('SECOND_SUNDAY_OF_EASTER')['date']:
+            week = 'Easter Week'
+        elif self.lday.get('SECOND_SUNDAY_OF_EASTER')['date'] <= self.now.date() < self.lday.get('THIRD_SUNDAY_OF_EASTER')['date']:
+            week = 'Week of 2 Easter'
+        elif self.lday.get('THIRD_SUNDAY_OF_EASTER')['date'] <= self.now.date() < self.lday.get('FOURTH_SUNDAY_OF_EASTER')['date']:
+            week = 'Week of 3 Easter'
+        elif self.lday.get('FOURTH_SUNDAY_OF_EASTER')['date'] <= self.now.date() < self.lday.get('FIFTH_SUNDAY_OF_EASTER')['date']:
+            week = 'Week of 4 Easter'
+        elif self.lday.get('FIFTH_SUNDAY_OF_EASTER')['date'] <= self.now.date() < self.lday.get('SIXTH_SUNDAY_OF_EASTER')['date']:
+            week = 'Week of 5 Easter'
+        elif self.lday.get('SIXTH_SUNDAY_OF_EASTER')['date'] <= self.now.date() < self.lday.get('SEVENTH_SUNDAY_OF_EASTER')['date']:
+            week = 'Week of 6 Easter'
+        elif self.lday.get('SEVENTH_SUNDAY_OF_EASTER')['date'] <= self.now.date() < self.lday.get('WHITSUNDAY')['date']:
+            week = 'Week of 7 Easter'
+        else:
+            week = 'Error'
+        return week
 
     def get_day(self):
         '''
@@ -1196,7 +1262,8 @@ class DailyOffice:
 if __name__ == '__main__':
     d = rd(days=0)
     test = DailyOffice(now=datetime.now() + d)
-    print(str(test.cycle.name))
-    print(str(test.season.name))
-    print(str(test.day))
-    print(str(test.hour.name))
+    print(test.cycle.name)
+    print(test.season.name)
+    print(test.week)
+    print(test.day)
+    print(test.hour.name)
