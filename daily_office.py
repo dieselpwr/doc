@@ -736,10 +736,10 @@ class LiturgicalDay(dict):
         date_key = date(year, 12, 25) - rd(days=1, weekday=SU(-26))
         if date_key < (easter(year) + rd(days=56)):
             date_key = date(1970, 1, 1)
-        name_key = 'PROPER_9'
+        name_key = 'PROPER_8'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Sunday Proper 9',
+            'name': 'Sunday Proper 8',
             'date': date_key,
         }
 
@@ -1145,6 +1145,25 @@ class DailyOffice:
                 cycle_enum = 2
         return CycleYear(cycle_enum)
 
+    def get_first_proper(self):
+        '''
+        first proper after Trinity Sunday
+        '''
+        first_proper = None
+        if self.lday.get('PROPER_3')['date'] > date(1970, 1, 1):
+            first_proper = 3
+        elif self.lday.get('PROPER_4')['date'] > date(1970, 1, 1):
+            first_proper = 4
+        elif self.lday.get('PROPER_5')['date'] > date(1970, 1, 1):
+            first_proper = 5
+        elif self.lday.get('PROPER_6')['date'] > date(1970, 1, 1):
+            first_proper = 6
+        elif self.lday.get('PROPER_7')['date'] > date(1970, 1, 1):
+            first_proper = 7
+        else:
+            first_proper = 8
+        return first_proper
+
     def get_season(self):
         '''
         returns the current season
@@ -1174,6 +1193,7 @@ class DailyOffice:
         returns the current week
         '''
         # TODO: add handling for evenings and figure out the propers
+        proper = self.get_first_proper()
         evening = self.now.time() > time(18, 0)
         if self.lday.get('FIRST_SUNDAY_OF_ADVENT')['date'] <= self.now.date() < self.lday.get('SECOND_SUNDAY_OF_ADVENT')['date']:
             week = 'Week of 1 Advent'
@@ -1231,6 +1251,16 @@ class DailyOffice:
             week = 'Week of 6 Easter'
         elif self.lday.get('SEVENTH_SUNDAY_OF_EASTER')['date'] <= self.now.date() < self.lday.get('WHITSUNDAY')['date']:
             week = 'Week of 7 Easter'
+        elif self.lday.get('WHITSUNDAY')['date'] <= self.now.date() < self.lday.get('TRINITY_SUNDAY')['date']:
+            week = 'Week of Proper ' + str(proper-2)
+        elif self.lday.get('TRINITY_SUNDAY')['date'] <= self.now.date() < self.lday.get('PROPER_' + str(proper))['date']:
+            week = 'Week of Proper ' + str(proper-1)
+        elif self.lday.get('PROPER_' + str(proper))['date'] <= self.now.date() < self.lday.get('PROPER_' + str(proper+1))['date']:
+            week = 'Week of Proper ' + str(proper)
+        elif self.lday.get('PROPER_' + str(proper+1))['date'] <= self.now.date() < self.lday.get('PROPER_' + str(proper+2))['date']:
+            week = 'Week of Proper ' + str(proper+1)
+        elif self.lday.get('PROPER_' + str(proper+2))['date'] <= self.now.date() < self.lday.get('PROPER_' + str(proper+3))['date']:
+            week = 'Week of Proper ' + str(proper+2)
         else:
             week = 'Error'
         return week
@@ -1260,7 +1290,7 @@ class DailyOffice:
 
 
 if __name__ == '__main__':
-    d = rd(days=0)
+    d = rd(days=165)
     test = DailyOffice(now=datetime.now() + d)
     print(test.cycle.name)
     print(test.season.name)
