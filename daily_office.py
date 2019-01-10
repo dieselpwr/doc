@@ -124,7 +124,7 @@ class LiturgicalDay(dict):
         self[switch_key] = {
             'name': 'Eve of the Annunciation',
             'date': date_key,
-            'evening_only': True,
+            'evening': True,
         }
 
         # The Annunciation of Our Lord Jesus Christ to the Blessed Virgin Mary
@@ -161,7 +161,7 @@ class LiturgicalDay(dict):
         self[switch_key] = {
             'name': 'Eve of the Visitation',
             'date': date_key,
-            'evening_only': True,
+            'evening': True,
         }
 
         # The Visitation of the Blessed Virgin Mary
@@ -189,7 +189,7 @@ class LiturgicalDay(dict):
         self[switch_key] = {
             'name': 'Eve of Saint John the Baptist',
             'date': date_key,
-            'evening_only': True,
+            'evening': True,
         }
 
         # The Nativity of Saint John the Baptist
@@ -262,7 +262,7 @@ class LiturgicalDay(dict):
         self[switch_key] = {
             'name': 'Eve of Holy Cross',
             'date': date_key,
-            'evening_only': True,
+            'evening': True,
         }
 
         # Holy Cross Day
@@ -918,7 +918,7 @@ class LiturgicalDay(dict):
         self[switch_key] = {
             'name': 'Eve of the Presentation',
             'date': date_key,
-            'evening_only': True,
+            'evening': True,
         }
 
         # The Presentation of Our Lord Jesus Christ in the Temple
@@ -937,7 +937,7 @@ class LiturgicalDay(dict):
         self[switch_key] = {
             'name': 'Eve of the Transfiguration',
             'date': date_key,
-            'evening_only': True,
+            'evening': True,
         }
 
         # The Transfiguration of Our Lord Jesus Christ
@@ -958,7 +958,7 @@ class LiturgicalDay(dict):
         self[switch_key] = {
             'name': 'Eve of Epiphany',
             'date': date_key,
-            'evening_only': True,
+            'evening': True,
         }
 
         # The Epiphany of Our Lord Jesus Christ
@@ -986,7 +986,7 @@ class LiturgicalDay(dict):
         self[switch_key] = {
             'name': 'Eve of Ascension Day',
             'date': date_key,
-            'evening_only': True,
+            'evening': True,
         }
 
         # Ascension Day
@@ -1005,7 +1005,7 @@ class LiturgicalDay(dict):
         self[switch_key] = {
             'name': 'Eve of Pentecost',
             'date': date_key,
-            'evening_only': True,
+            'evening': True,
         }
 
         # The Day of Pentecost: Whitsunday
@@ -1033,7 +1033,7 @@ class LiturgicalDay(dict):
         self[switch_key] = {
             'name': 'Eve of All Saints',
             'date': date_key,
-            'evening_only': True,
+            'evening': True,
         }
 
         # All Saint's Day
@@ -1052,7 +1052,7 @@ class LiturgicalDay(dict):
         self[switch_key] = {
             'name': 'Christmas Eve',
             'date': date_key,
-            'evening_only': True,
+            'evening': True,
         }
 
         # The Nativity of Our Lord Jesus Christ
@@ -1071,7 +1071,7 @@ class LiturgicalDay(dict):
         self[switch_key] = {
             'name': 'Eve of Holy Name',
             'date': date_key,
-            'evening_only': True,
+            'evening': True,
         }
 
 class DailyOffice:
@@ -1276,8 +1276,15 @@ class DailyOffice:
         '''
         returns relevant holy date or day of week name
         '''
+        evening = self.now.time() > time(18, 0)
         if self.now.date() in self.ldate:
-            day = self.ldate.get(self.now.date())['name']
+            day_dict = self.ldate.get(self.now.date())
+            if evening:
+                day = day_dict['name']
+            elif 'evening' not in day_dict:
+                day = day_dict['name']
+            else:
+                day = day_name[self.now.date().weekday()]
         else:
             day = day_name[self.now.date().weekday()]
         return day
