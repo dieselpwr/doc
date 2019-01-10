@@ -684,7 +684,7 @@ class LiturgicalDay(dict):
         name_key = 'PROPER_3'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Sunday Proper 3',
+            'name': 'Sunday',
             'date': date_key,
         }
 
@@ -695,7 +695,7 @@ class LiturgicalDay(dict):
         name_key = 'PROPER_4'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Sunday Proper 4',
+            'name': 'Sunday',
             'date': date_key,
         }
 
@@ -706,7 +706,7 @@ class LiturgicalDay(dict):
         name_key = 'PROPER_5'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Sunday Proper 5',
+            'name': 'Sunday',
             'date': date_key,
         }
 
@@ -717,7 +717,7 @@ class LiturgicalDay(dict):
         name_key = 'PROPER_6'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Sunday Proper 6',
+            'name': 'Sunday',
             'date': date_key,
         }
 
@@ -728,7 +728,7 @@ class LiturgicalDay(dict):
         name_key = 'PROPER_7'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Sunday Proper 7',
+            'name': 'Sunday',
             'date': date_key,
         }
 
@@ -739,7 +739,7 @@ class LiturgicalDay(dict):
         name_key = 'PROPER_8'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Sunday Proper 8',
+            'name': 'Sunday',
             'date': date_key,
         }
 
@@ -748,7 +748,7 @@ class LiturgicalDay(dict):
         name_key = 'PROPER_9'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Sunday Proper 9',
+            'name': 'Sunday',
             'date': date_key,
         }
 
@@ -757,7 +757,7 @@ class LiturgicalDay(dict):
         name_key = 'PROPER_10'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Sunday Proper 10',
+            'name': 'Sunday',
             'date': date_key,
         }
 
@@ -766,7 +766,7 @@ class LiturgicalDay(dict):
         name_key = 'PROPER_11'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Sunday Proper 11',
+            'name': 'Sunday',
             'date': date_key,
         }
 
@@ -775,7 +775,7 @@ class LiturgicalDay(dict):
         name_key = 'PROPER_12'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Sunday Proper 12',
+            'name': 'Sunday',
             'date': date_key,
         }
 
@@ -784,7 +784,7 @@ class LiturgicalDay(dict):
         name_key = 'PROPER_13'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Sunday Proper 13',
+            'name': 'Sunday',
             'date': date_key,
         }
 
@@ -793,7 +793,7 @@ class LiturgicalDay(dict):
         name_key = 'PROPER_14'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Sunday Proper 14',
+            'name': 'Sunday',
             'date': date_key,
         }
 
@@ -802,7 +802,7 @@ class LiturgicalDay(dict):
         name_key = 'PROPER_15'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Sunday Proper 15',
+            'name': 'Sunday',
             'date': date_key,
         }
 
@@ -811,7 +811,7 @@ class LiturgicalDay(dict):
         name_key = 'PROPER_16'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Sunday Proper 16',
+            'name': 'Sunday',
             'date': date_key,
         }
 
@@ -820,7 +820,7 @@ class LiturgicalDay(dict):
         name_key = 'PROPER_17'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Sunday Proper 17',
+            'name': 'Sunday',
             'date': date_key,
         }
 
@@ -829,7 +829,7 @@ class LiturgicalDay(dict):
         name_key = 'PROPER_18'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Sunday Proper 18',
+            'name': 'Sunday',
             'date': date_key,
         }
 
@@ -838,7 +838,7 @@ class LiturgicalDay(dict):
         name_key = 'PROPER_19'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Sunday Proper 19',
+            'name': 'Sunday',
             'date': date_key,
         }
 
@@ -847,7 +847,7 @@ class LiturgicalDay(dict):
         name_key = 'PROPER_20'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Sunday Proper 20',
+            'name': 'Sunday',
             'date': date_key,
         }
 
@@ -856,7 +856,7 @@ class LiturgicalDay(dict):
         name_key = 'PROPER_21'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Sunday Proper 21',
+            'name': 'Sunday',
             'date': date_key,
         }
 
@@ -865,7 +865,7 @@ class LiturgicalDay(dict):
         name_key = 'PROPER_22'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Sunday Proper 22',
+            'name': 'Sunday',
             'date': date_key,
         }
 
@@ -874,7 +874,7 @@ class LiturgicalDay(dict):
         name_key = 'PROPER_23'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Sunday Proper 23',
+            'name': 'Sunday',
             'date': date_key,
         }
 
@@ -883,7 +883,7 @@ class LiturgicalDay(dict):
         name_key = 'PROPER_24'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Sunday Proper 24',
+            'name': 'Sunday',
             'date': date_key,
         }
 
@@ -892,7 +892,7 @@ class LiturgicalDay(dict):
         name_key = 'PROPER_25'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Sunday Proper 25',
+            'name': 'Sunday',
             'date': date_key,
         }
 
@@ -901,7 +901,7 @@ class LiturgicalDay(dict):
         name_key = 'PROPER_26'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Sunday Proper 26',
+            'name': 'Sunday',
             'date': date_key,
         }
 
@@ -910,7 +910,7 @@ class LiturgicalDay(dict):
         name_key = 'PROPER_27'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Sunday Proper 27',
+            'name': 'Sunday',
             'date': date_key,
         }
 
@@ -919,7 +919,7 @@ class LiturgicalDay(dict):
         name_key = 'PROPER_28'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Sunday Proper 28',
+            'name': 'Sunday',
             'date': date_key,
         }
 
@@ -928,7 +928,7 @@ class LiturgicalDay(dict):
         name_key = 'PROPER_29'
         switch_key = self.key_switcher(date_key, name_key)
         self[switch_key] = {
-            'name': 'Sunday Proper 29',
+            'name': 'Sunday',
             'date': date_key,
         }
 
@@ -1262,7 +1262,7 @@ class DailyOffice:
         elif self.lday.get('PROPER_' + str(proper+2))['date'] <= self.now.date() < self.lday.get('PROPER_' + str(proper+3))['date']:
             week = 'Week of Proper ' + str(proper+2)
         else:
-            week = 'Error'
+            week = 'Error' # TODO: remove this or something later
         return week
 
     def get_day(self):
