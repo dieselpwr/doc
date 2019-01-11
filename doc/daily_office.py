@@ -1136,17 +1136,17 @@ class DailyOffice:
         '''
         evening = self.now.time() > time(18, 0)
         if bool(evening) and self.now.date() == self.lday.get('CHRISTMAS_EVE')['date']:
-            liturgical_season = 'Christmas'
+            liturgical_season = 'Christmas Season'
         elif bool(evening) and self.now.date() == self.lday.get('EVE_OF_EPIPHANY')['date']:
-            liturgical_season = 'Epiphany'
+            liturgical_season = 'Epiphany Season'
         elif self.lday.get('FIRST_SUNDAY_OF_ADVENT')['date'] <= self.now.date() < self.lday.get('CHRISTMAS_DAY')['date']:
-            liturgical_season = 'Advent'
+            liturgical_season = 'Advent Season'
         elif self.now.date() >= self.lday.get('CHRISTMAS_DAY')['date'] or self.now.date() < self.lday.get('THE_EPIPHANY')['date']:
-            liturgical_season = 'Christmas'
+            liturgical_season = 'Christmas Season'
         elif self.lday.get('THE_EPIPHANY')['date'] <= self.now.date() < self.lday.get('ASH_WEDNESDAY')['date']:
-            liturgical_season = 'Epiphany'
+            liturgical_season = 'Epiphany Season'
         elif self.lday.get('ASH_WEDNESDAY')['date'] <= self.now.date() < self.lday.get('EASTER_DAY')['date']:
-            liturgical_season = 'Lent'
+            liturgical_season = 'The Lenten Season'
         elif self.lday.get('EASTER_DAY')['date'] <= self.now.date() <= self.lday.get('TRINITY_SUNDAY')['date']:
             liturgical_season = 'Easter'
         else:
