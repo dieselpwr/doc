@@ -7,7 +7,7 @@ from doc.daily_office import DailyOffice
 # Create your views here.
 
 def home(request):
-    do = DailyOffice(now=timezone.now())
+    do = DailyOffice(now=timezone.localtime())
 
     context = {
         'cycle': do.cycle,
