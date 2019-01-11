@@ -1,9 +1,12 @@
 {% extends 'doc/base.html' %}
 
 {% block main %}
-<h1 class="cover-heading">{{season}}</h1>
-<p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-<p class="lead">
-  <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+<h2 class="cover-heading">Daily Office Companion</h2>
+<p align="left">
+  <strong>Year:</strong> {{cycle}} <br />
+  <strong>Season:</strong> {{season}} Season <br />
+  <strong>Week:</strong> {{week}} <br />
+  <strong>Day:</strong> {{day}} <br />
+  <strong>Prayer:</strong> {{hour}} <br />
 </p>
 {% endblock %}

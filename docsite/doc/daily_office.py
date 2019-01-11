@@ -1293,10 +1293,11 @@ class DailyOffice:
         '''
         returns the appropriate cannonical hour based on time
         '''
-        morning = abs((self.now - datetime.combine(self.now.date(), time(6, 0))).total_seconds())
-        noonday = abs((self.now - datetime.combine(self.now.date(), time(12, 0))).total_seconds())
-        evening = abs((self.now - datetime.combine(self.now.date(), time(18, 0))).total_seconds())
-        compline = abs((self.now - datetime.combine(self.now.date(), time(21, 0))).total_seconds())
+        test_now = self.now.replace(year=1970, month=1, day=1, tzinfo=None)
+        morning = abs((test_now - datetime(1970, 1, 1, 6, 0)).total_seconds())
+        noonday = abs((test_now - datetime(1970, 1, 1, 12, 0)).total_seconds())
+        evening = abs((test_now - datetime(1970, 1, 1, 18, 0)).total_seconds())
+        compline = abs((test_now - datetime(1970, 1, 1, 21, 0)).total_seconds())
         diffs = (morning, noonday, evening, compline)
         hours_enum = diffs.index(min(diffs))
         if hours_enum == 0:
