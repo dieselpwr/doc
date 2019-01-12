@@ -14,7 +14,8 @@ def home(request):
         'season': do.season,
         'week': do.week,
         'day': do.day,
-        'hour': do.hour
+        'hour': do.hour,
+        'timezone': timezone.get_current_timezone(),
     }
 
     return render(request, 'doc/home.html', context)
