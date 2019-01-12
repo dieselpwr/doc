@@ -77,7 +77,16 @@ class LiturgicalDay(dict):
 
         #============================Tier 6============================
 
-
+        # Eve of the Baptism of our Lord
+        date_key = date(year, 1, 6) + rd(days=1, weekday=SU(+1)) - rd(days=1)
+        if date_key >= (easter(year) - rd(days=46, weekday=SU(-1))):
+            date_key = date(1970, 1, 1)
+        name_key = 'EVE_OF_1_EPIPHANY'
+        switch_key = self.key_switcher(date_key, name_key)
+        self[switch_key] = {
+            'name': 'Eve of the Baptism of our Lord',
+            'date': date_key,
+        }
 
         #============================Tier 5============================
 
@@ -1134,7 +1143,7 @@ class DailyOffice:
         '''
         returns the current season
         '''
-        evening = self.now.time() > time(18, 0)
+        evening = self.now.time() > time(15, 0)
         if bool(evening) and self.now.date() == self.lday.get('CHRISTMAS_EVE')['date']:
             liturgical_season = 'Christmas Season'
         elif bool(evening) and self.now.date() == self.lday.get('EVE_OF_EPIPHANY')['date']:
@@ -1276,7 +1285,7 @@ class DailyOffice:
         '''
         returns relevant holy date or day of week name
         '''
-        evening = self.now.time() > time(18, 0)
+        evening = self.now.time() > time(15, 0)
         if self.now.date() in self.ldate:
             day_dict = self.ldate.get(self.now.date())
             if evening:
