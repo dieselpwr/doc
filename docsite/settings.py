@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
-    'django-env.vpazunwamm.us-east-2.elasticbeanstalk.com',
+    'dailyofficecompanion.com',
 ]
 
 
