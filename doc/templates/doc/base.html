@@ -61,12 +61,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script>
-    window.onload = function() {
         // if (window.location.protocol != 'https:') {
         //   window.location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
         // }
+    window.onload = function() {
         if(!window.location.hash) {
-            window.location.href = window.location.href + '#loaded';
+            window.location = window.location + '#loaded';
             window.location.reload();
         }
     }
