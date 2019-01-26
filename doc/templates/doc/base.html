@@ -62,9 +62,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script>
     window.onload = function() {
+        // if (window.location.protocol != 'https:') {
+        //   window.location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+        // }
         if(!window.location.hash) {
-            window.location = 'https://www.dailyofficecompanion.com/#loaded';
-            window.location.reload()
+            window.location.href = window.location.href + '#loaded';
+            window.location.reload();
         }
     }
     </script>
