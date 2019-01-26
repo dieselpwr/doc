@@ -43,11 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'doc',
     'tz_detect',
-    # 'djangosecure',
 ]
 
 MIDDLEWARE = [
-    # 'djangosecure.middleware.SecurityMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -78,7 +76,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'docsite.wsgi.application'
-SECURE_SSL_REDIRECT = True
+# SECURE_SSL_REDIRECT = True
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
