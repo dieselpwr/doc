@@ -1,12 +1,12 @@
 {% extends 'doc/base.html' %}
 
 {% block main %}
-<p align="left">
-  <strong>Year:</strong> {{cycle}} <br />
-  <strong>Season:</strong> {{season}} <br />
-  <strong>Week:</strong> {{week}} <br />
-  <strong>Day:</strong> {{day}} <br />
-  <strong>Service:</strong> {{hour}} <br />
+<p class="text-justify">
+  <strong>Year:</strong> {{cycle_today}} <br />
+  <strong>Season:</strong> {{season_today}} <br />
+  <strong>Week:</strong> {{week_today}} <br />
+  <strong>Day:</strong> {{day_today}} <br />
+  <strong>Service:</strong> {{hour_today}} <br />
 </p>
 {% endblock %}
 
