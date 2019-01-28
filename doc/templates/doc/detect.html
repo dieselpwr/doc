@@ -1,15 +1,8 @@
 {% extends 'doc/base.html' %}
 
 {% block head %}
-<script>
-  setTimeout(function () {
-    if (location.protocol !== "https:") {
-      location.protocol = "https:";
-    } else {
-      window.location.replace("/home");
-    };
-  }, 1000);
-</script>
+{% load static %}
+<script src="{% static 'doc/js/detect.js' %}"></script>
 {% endblock %}
 
 {% block main %}

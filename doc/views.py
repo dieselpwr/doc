@@ -35,4 +35,4 @@ def home(request):
         'timezone': timezone.get_current_timezone(),
     }
 
-    return render(request, 'doc/home3.html', context)
+    return render(request, 'doc/home.html', context)
