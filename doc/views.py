@@ -6,6 +6,10 @@ from doc.daily_office import DailyOffice
 
 # Create your views here.
 
+def detect(request):
+
+    return render(request, 'doc/detect.html')
+
 def home(request):
     do = DailyOffice(now=timezone.localtime())
 
