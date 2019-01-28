@@ -3,7 +3,11 @@
 {% block head %}
 <script>
   setTimeout(function () {
-    window.location.replace("https://dailyofficecompanion.com/home");
+    if (location.protocol !== "https:") {
+      location.protocol = "https:";
+    } else {
+      window.location.replace("https://dailyofficecompanion.com/home");
+    };
   }, 2000);
 </script>
 {% endblock %}
