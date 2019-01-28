@@ -9,5 +9,7 @@
 {% block main %}
 <p>
   Detecting Timezone...
+  {% load tz_detect %}
+  {% tz_detect %}
 </p>
 {% endblock %}
