@@ -2,14 +2,14 @@
 
 {% block head %}
 <script>
-  window.location.replace("https://dailyofficecompanion.com/home");
+  setTimeout(function () {
+    window.location.replace("https://dailyofficecompanion.com/home");
+  }, 2000);
 </script>
 {% endblock %}
 
 {% block main %}
 <p>
   Detecting Timezone...
-  {% load tz_detect %}
-  {% tz_detect %}
 </p>
 {% endblock %}
