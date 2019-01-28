@@ -1,13 +1,8 @@
 {% extends 'doc/base.html' %}
 
-{% block head %}
-{% load static %}
-<script src="{% static 'doc/js/home.js' %}"></script>
-{% endblock %}
-
 {% block main %}
 
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="10000">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1" class="active"></li>
